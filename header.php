@@ -28,7 +28,7 @@
 		<meta name="msapplication-TileColor" content="#f01d4f">
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
 
-  	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+  		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
@@ -41,6 +41,15 @@
 
 	<body <?php body_class(); ?>>
 
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=333468963341009";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
 		<div id="container">
 
 
@@ -48,16 +57,21 @@
 
 				<div id="inner-header" class="wrap clearfix">
 
-					<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
-					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
+					<a href="<?php echo home_url(); ?>" rel="nofollow">
+						<!-- <img id="logo" src="http://localhost:8888/wtf2013/wp-content/uploads/2013/03/logo_v0.jpg" /> -->
+						<div style="height:20px;"></div>
+					</a>
+					
 
 					<!-- if you'd like to use the site description you can un-comment it below -->
 					<?php // bloginfo('description'); ?>
 
 
-					<nav role="navigation">
-						<?php bones_main_nav(); ?>
-					</nav>
+					<div id="nav_wrapper">
+						<nav role="navigation">
+							<?php bones_main_nav(); ?>
+						</nav>
+					</div>
 
 				</div> <!-- end #inner-header -->
 

@@ -4,7 +4,7 @@
 			
 				<div id="inner-content" class="wrap clearfix">
 			
-				    <div id="main" class="eightcol first clearfix" role="main">
+				    <div id="main" class="sixcol first clearfix" role="main">
 
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -36,7 +36,13 @@
 							
 							    <?php the_post_thumbnail( 'wtf-artistpage' ); ?>
 
+							    <div class="artist-bio">
+
 							    <?php the_content(); ?>
+
+								</div>
+
+								
 					
 						    </section> <!-- end article section -->
 						
@@ -69,18 +75,20 @@
 			
 				    </div> <!-- end #main -->
     
-				    <div id="artist_sidebar" class="artist_sidebar fourcol last clearfix" role="complementary">
+				    <div id="artist_sidebar" class="artist_sidebar sixcol last clearfix" role="complementary">
 
 						<?php 
 				 			if($artist_data['_artist_youtube_embed']){ 				
-				                echo '<iframe width="359" height="283" src="http://www.youtube.com/embed/'.$artist_data['_artist_youtube_embed'].'" frameborder="0" allowfullscreen></iframe>';				
+				                echo '<iframe width="554" height="437" src="http://www.youtube.com/embed/'.$artist_data['_artist_youtube_embed'].'" frameborder="0" allowfullscreen></iframe>';				
 				            }elseif($artist_data['_artist_vimeo_embed']){ 				
 				                echo '<iframe width="359" height="283"  src="http://player.vimeo.com/video/'.$artist_data['_artist_vimeo_embed'].'?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>';				
 				            }          
 						    
-				            if($artist_data['_artist_soundcloud_embed']){
-				                echo do_shortcode('[soundcloud]' . $artist_data['_artist_soundcloud_embed'] . '[/soundcloud]');
-				            }
+				            // if($artist_data['_artist_soundcloud_embed']){
+				            //     echo do_shortcode('[soundcloud]' . $artist_data['_artist_soundcloud_embed'] . '[/soundcloud]');
+				            // }
+
+				            // echo '<h2>Explore</h2>';
 
 							echo '<div id="artist_links">';
 							if($artist_data['_artist_website']){
@@ -104,6 +112,8 @@
 							}	
 							echo '<div class="clear"></div></div>';
 							
+							
+
 							if($artist_data['_artist_mp3_name']){
 								echo '<a href="javascript:;" class="artist_mp3 details_mp3" id="' . $artist_data['_artist_mp3_id'] . '" name="' . $artist_data['_artist_mp3_name'] . '"><div></div>&nbsp;PLAY MP3</a><div class="clear"></div>';
 							}

@@ -62,6 +62,8 @@ COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
+/*$wtf-orange-shadow: #f2c695;*/
+/*$wtf-orange-shadow: rgba(246,146,35,0.2);*/
 /*
 Here's a great tutorial on how to
 use color variables properly:
@@ -70,24 +72,6 @@ http://sachagreif.com/sass-color-variables/
 /*********************
 TYPOGRAPHY
 *********************/
-/* 	To embed your own fonts, use this syntax
-	and place your fonts inside the
-	library/fonts folder. For more information
-	on embedding fonts, go to:
-	http://www.fontsquirrel.com/
-	Be sure to remove the comment brackets.
-*/
-/*	@font-face {
-    	font-family: 'Font Name';
-    	src: url('library/fonts/font-name.eot');
-    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
-    	font-weight: normal;
-    	font-style: normal;
-	}
-*/
 @font-face {
   font-family: 'Whitney-Condensed-Light';
   src: url("http://whatthefestival.com/assets/fonts/WhitneyHTF-LightCondensed.otf"); }
@@ -119,6 +103,10 @@ TYPOGRAPHY
 @font-face {
   font-family: 'Whitney-Medium';
   src: url("http://whatthefestival.com/assets/fonts/WhitneyHTF-Medium.otf"); }
+
+@font-face {
+  font-family: 'Whitney-Book';
+  src: url("http://whatthefestival.com/assets/fonts/WhitneyHTF-Book.otf"); }
 
 /*
 use the best ampersand
@@ -398,8 +386,14 @@ do they need tweaking?
 /* end .footer-links */
 /* MD CUSTOM */
 ul.lineup li {
-  width: 48%;
+  width: 50%;
   float: left; }
+
+div.jp-title {
+  display: none; }
+
+a#expand_collapse {
+  display: none; }
 
 /******************************************************************
 Site Name:
@@ -430,37 +424,59 @@ HEADER SYTLES
 NAVIGATION STYLES
 *********************/
 ul.nav {
-  background: #eee;
+  /*margin-top: -61px;*/
   border: 0;
   /* end .menu ul li */
   /* highlight current page */
-  /* end current highlighters */ }
+  /* end current highlighters */
+  /* MD CUSTOM NAV */
+  /*li.menu-item-14:hover {
+  	@include box-shadow( -1px 1px $wtf-orange-shadow,
+  							-2px 2px $wtf-orange-shadow,
+  							-3px 3px $wtf-orange-shadow,
+  							-4px 4px $wtf-orange-shadow,
+  							-5px 5px $wtf-orange-shadow,
+  							-6px 6px $wtf-orange-shadow,
+  							-7px 7px $wtf-orange-shadow,
+  							-8px 8px $wtf-orange-shadow	);
+  		
+  							@include animate-3d;
+  	}*/
+  /* TICKETS */
+  /* EXPERIENCE */
+  /* INFORMATION */ }
   ul.nav li {
-    float: left;
+    /*float: left;*/
     position: relative;
+    /*margin: -2px;*/
     /*
     plan your menus and drop-downs wisely.
     */
     /* showing sub-menus */ }
     ul.nav li a {
       border-bottom: 0;
+      color: #ffffff;
       /*
       you can use hover styles here even though this size
       has the possibility of being a mobile device.
       */ }
       ul.nav li a:hover, ul.nav li a:focus {
-        background-color: #dedede; }
+        color: #902a8d;
+        /*color: white;*/ }
     ul.nav li ul.sub-menu,
     ul.nav li ul.children {
       width: 180px;
-      border: 1px solid #ccc;
+      margin-top: 7px;
       border-top: 0;
       position: absolute;
       display: none;
       z-index: 8999;
+      text-align: left;
       /* highlight sub-menu current page */ }
       ul.nav li ul.sub-menu li,
       ul.nav li ul.children li {
+        display: block;
+        padding: 10px 0;
         /*
         if you need to go deeper, go nuts
         just remember deeper menus suck
@@ -470,15 +486,151 @@ ul.nav {
         ul.nav li ul.children li a {
           padding-left: 10px;
           border-right: 0;
-          display: block;
+          /*display: block;*/
           width: 180px;
-          border-bottom: 1px solid #ccc; }
+          font-size: 16px;
+          /*border-bottom: 1px solid #ccc;*/ }
         ul.nav li ul.sub-menu li:last-child a,
         ul.nav li ul.children li:last-child a {
           border-bottom: 0; }
     ul.nav li:hover ul {
       top: auto;
       display: block; }
+  ul.nav li.menu-item-226 a {
+    /*float: left;*/
+    color: #242021;
+    padding: 10px;
+    margin-right: -4px; }
+  ul.nav li.menu-item-226 a:hover {
+    color: #902a8d; }
+  ul.nav li.menu-item-14 {
+    /*float: left;*/
+    background: #f69222;
+    padding: 10px;
+    z-index: 10;
+    margin-right: -4px;
+    -webkit-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    -ms-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    /* ease-in-out */
+    -webkit-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    -ms-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    /* ease-in-out */ }
+  ul.nav li.menu-item-66 {
+    /*float: left;
+    margin-left: 87px;*/
+    background: #59c4be;
+    padding: 10px;
+    -webkit-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    -ms-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    /* ease-in-out */
+    -webkit-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    -ms-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    /* ease-in-out */
+    z-index: 9;
+    /*margin-right: 4px;			*/
+    -webkit-box-shadow: -1px 1px rgba(185, 216, 208, 0.7), -2px 2px rgba(185, 216, 208, 0.7), -3px 3px rgba(185, 216, 208, 0.7), -4px 4px rgba(185, 216, 208, 0.7), -5px 5px rgba(185, 216, 208, 0.7), -6px 6px rgba(185, 216, 208, 0.7), -7px 7px rgba(185, 216, 208, 0.7), -8px 8px rgba(185, 216, 208, 0.7);
+    -moz-box-shadow: -1px 1px rgba(185, 216, 208, 0.7), -2px 2px rgba(185, 216, 208, 0.7), -3px 3px rgba(185, 216, 208, 0.7), -4px 4px rgba(185, 216, 208, 0.7), -5px 5px rgba(185, 216, 208, 0.7), -6px 6px rgba(185, 216, 208, 0.7), -7px 7px rgba(185, 216, 208, 0.7), -8px 8px rgba(185, 216, 208, 0.7);
+    box-shadow: -1px 1px rgba(185, 216, 208, 0.7), -2px 2px rgba(185, 216, 208, 0.7), -3px 3px rgba(185, 216, 208, 0.7), -4px 4px rgba(185, 216, 208, 0.7), -5px 5px rgba(185, 216, 208, 0.7), -6px 6px rgba(185, 216, 208, 0.7), -7px 7px rgba(185, 216, 208, 0.7), -8px 8px rgba(185, 216, 208, 0.7); }
+  ul.nav li.menu-item-66 ul.sub-menu {
+    /*float: left;
+    margin-left: 87px;*/
+    background: #59c4be;
+    z-index: 9;
+    -webkit-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    -ms-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    /* ease-in-out */
+    -webkit-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    -ms-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    /* ease-in-out */
+    -webkit-box-shadow: -1px 1px rgba(185, 216, 208, 0.7), -2px 2px rgba(185, 216, 208, 0.7), -3px 3px rgba(185, 216, 208, 0.7), -4px 4px rgba(185, 216, 208, 0.7), -5px 5px rgba(185, 216, 208, 0.7), -6px 6px rgba(185, 216, 208, 0.7), -7px 7px rgba(185, 216, 208, 0.7), -8px 8px rgba(185, 216, 208, 0.7);
+    -moz-box-shadow: -1px 1px rgba(185, 216, 208, 0.7), -2px 2px rgba(185, 216, 208, 0.7), -3px 3px rgba(185, 216, 208, 0.7), -4px 4px rgba(185, 216, 208, 0.7), -5px 5px rgba(185, 216, 208, 0.7), -6px 6px rgba(185, 216, 208, 0.7), -7px 7px rgba(185, 216, 208, 0.7), -8px 8px rgba(185, 216, 208, 0.7);
+    box-shadow: -1px 1px rgba(185, 216, 208, 0.7), -2px 2px rgba(185, 216, 208, 0.7), -3px 3px rgba(185, 216, 208, 0.7), -4px 4px rgba(185, 216, 208, 0.7), -5px 5px rgba(185, 216, 208, 0.7), -6px 6px rgba(185, 216, 208, 0.7), -7px 7px rgba(185, 216, 208, 0.7), -8px 8px rgba(185, 216, 208, 0.7); }
+  ul.nav li.menu-item-66 ul.sub-menu li {
+    /*border-top: 1px solid $wtf-foam-shadow;*/ }
+  ul.nav li.menu-item-13 {
+    /*float: left;
+    margin-left: 68px;*/
+    background: #902a8d;
+    padding: 10px;
+    -webkit-box-shadow: -1px 1px rgba(193, 154, 186, 0.7), -2px 2px rgba(193, 154, 186, 0.7), -3px 3px rgba(193, 154, 186, 0.7), -4px 4px rgba(193, 154, 186, 0.7), -5px 5px rgba(193, 154, 186, 0.7), -6px 6px rgba(193, 154, 186, 0.7), -7px 7px rgba(193, 154, 186, 0.7), -8px 8px rgba(193, 154, 186, 0.7);
+    -moz-box-shadow: -1px 1px rgba(193, 154, 186, 0.7), -2px 2px rgba(193, 154, 186, 0.7), -3px 3px rgba(193, 154, 186, 0.7), -4px 4px rgba(193, 154, 186, 0.7), -5px 5px rgba(193, 154, 186, 0.7), -6px 6px rgba(193, 154, 186, 0.7), -7px 7px rgba(193, 154, 186, 0.7), -8px 8px rgba(193, 154, 186, 0.7);
+    box-shadow: -1px 1px rgba(193, 154, 186, 0.7), -2px 2px rgba(193, 154, 186, 0.7), -3px 3px rgba(193, 154, 186, 0.7), -4px 4px rgba(193, 154, 186, 0.7), -5px 5px rgba(193, 154, 186, 0.7), -6px 6px rgba(193, 154, 186, 0.7), -7px 7px rgba(193, 154, 186, 0.7), -8px 8px rgba(193, 154, 186, 0.7);
+    z-index: 8;
+    /*margin-right: 4px;	*/ }
+  ul.nav li.menu-item-13 a:hover {
+    color: #59c4be; }
+  ul.nav li.menu-item-13 ul.sub-menu {
+    /*float: left;
+    margin-left: 87px;*/
+    background: #902a8d;
+    -webkit-box-shadow: -1px 1px rgba(193, 154, 186, 0.7), -2px 2px rgba(193, 154, 186, 0.7), -3px 3px rgba(193, 154, 186, 0.7), -4px 4px rgba(193, 154, 186, 0.7), -5px 5px rgba(193, 154, 186, 0.7), -6px 6px rgba(193, 154, 186, 0.7), -7px 7px rgba(193, 154, 186, 0.7), -8px 8px rgba(193, 154, 186, 0.7);
+    -moz-box-shadow: -1px 1px rgba(193, 154, 186, 0.7), -2px 2px rgba(193, 154, 186, 0.7), -3px 3px rgba(193, 154, 186, 0.7), -4px 4px rgba(193, 154, 186, 0.7), -5px 5px rgba(193, 154, 186, 0.7), -6px 6px rgba(193, 154, 186, 0.7), -7px 7px rgba(193, 154, 186, 0.7), -8px 8px rgba(193, 154, 186, 0.7);
+    box-shadow: -1px 1px rgba(193, 154, 186, 0.7), -2px 2px rgba(193, 154, 186, 0.7), -3px 3px rgba(193, 154, 186, 0.7), -4px 4px rgba(193, 154, 186, 0.7), -5px 5px rgba(193, 154, 186, 0.7), -6px 6px rgba(193, 154, 186, 0.7), -7px 7px rgba(193, 154, 186, 0.7), -8px 8px rgba(193, 154, 186, 0.7);
+    z-index: 9; }
+  ul.nav li.menu-item-13 ul.sub-menu li {
+    /*border-top: 1px solid $wtf-purple-shadow;*/ }
+  ul.nav li.menu-item-12 {
+    /*float: right;*/
+    background: #25aae2;
+    padding: 10px;
+    -webkit-box-shadow: -1px 1px rgba(168, 203, 221, 0.7), -2px 2px rgba(168, 203, 221, 0.7), -3px 3px rgba(168, 203, 221, 0.7), -4px 4px rgba(168, 203, 221, 0.7), -5px 5px rgba(168, 203, 221, 0.7), -6px 6px rgba(168, 203, 221, 0.7), -7px 7px rgba(168, 203, 221, 0.7), -8px 8px rgba(168, 203, 221, 0.7);
+    -moz-box-shadow: -1px 1px rgba(168, 203, 221, 0.7), -2px 2px rgba(168, 203, 221, 0.7), -3px 3px rgba(168, 203, 221, 0.7), -4px 4px rgba(168, 203, 221, 0.7), -5px 5px rgba(168, 203, 221, 0.7), -6px 6px rgba(168, 203, 221, 0.7), -7px 7px rgba(168, 203, 221, 0.7), -8px 8px rgba(168, 203, 221, 0.7);
+    box-shadow: -1px 1px rgba(168, 203, 221, 0.7), -2px 2px rgba(168, 203, 221, 0.7), -3px 3px rgba(168, 203, 221, 0.7), -4px 4px rgba(168, 203, 221, 0.7), -5px 5px rgba(168, 203, 221, 0.7), -6px 6px rgba(168, 203, 221, 0.7), -7px 7px rgba(168, 203, 221, 0.7), -8px 8px rgba(168, 203, 221, 0.7);
+    z-index: 6;
+    /*margin-right: 4px;	*/
+    margin-left: -4px; }
+  ul.nav li.menu-item-12 ul.sub-menu {
+    /*float: left;
+    margin-left: 87px;*/
+    background: #25aae2;
+    -webkit-box-shadow: -1px 1px rgba(168, 203, 221, 0.7), -2px 2px rgba(168, 203, 221, 0.7), -3px 3px rgba(168, 203, 221, 0.7), -4px 4px rgba(168, 203, 221, 0.7), -5px 5px rgba(168, 203, 221, 0.7), -6px 6px rgba(168, 203, 221, 0.7), -7px 7px rgba(168, 203, 221, 0.7), -8px 8px rgba(168, 203, 221, 0.7);
+    -moz-box-shadow: -1px 1px rgba(168, 203, 221, 0.7), -2px 2px rgba(168, 203, 221, 0.7), -3px 3px rgba(168, 203, 221, 0.7), -4px 4px rgba(168, 203, 221, 0.7), -5px 5px rgba(168, 203, 221, 0.7), -6px 6px rgba(168, 203, 221, 0.7), -7px 7px rgba(168, 203, 221, 0.7), -8px 8px rgba(168, 203, 221, 0.7);
+    box-shadow: -1px 1px rgba(168, 203, 221, 0.7), -2px 2px rgba(168, 203, 221, 0.7), -3px 3px rgba(168, 203, 221, 0.7), -4px 4px rgba(168, 203, 221, 0.7), -5px 5px rgba(168, 203, 221, 0.7), -6px 6px rgba(168, 203, 221, 0.7), -7px 7px rgba(168, 203, 221, 0.7), -8px 8px rgba(168, 203, 221, 0.7);
+    z-index: 9; }
+  ul.nav li.menu-item-12 ul.sub-menu li {
+    /*border-top: 1px solid $wtf-blue-shadow;*/ }
+  ul.nav li.menu-item-39 {
+    /*float: right;
+    margin-right: 55px;*/
+    background: #59c4be;
+    padding: 10px;
+    /*@include box-shadow ( -1px 1px $wtf-foam-shadow,
+    					-2px 2px $wtf-foam-shadow,
+    					-3px 3px $wtf-foam-shadow,
+    					-4px 4px $wtf-foam-shadow,
+    					-5px 5px $wtf-foam-shadow,
+    					-6px 6px $wtf-foam-shadow,
+    					-7px 7px $wtf-foam-shadow,
+    					-8px 8px $wtf-foam-shadow );*/
+    z-index: 7; }
+  ul.nav li.menu-item-11 {
+    /*float: right;
+    margin-right:47px;*/
+    background: #f69222;
+    padding: 10px;
+    -webkit-box-shadow: -1px 1px rgba(242, 198, 149, 0.7), -2px 2px rgba(242, 198, 149, 0.7), -3px 3px rgba(242, 198, 149, 0.7), -4px 4px rgba(242, 198, 149, 0.7), -5px 5px rgba(242, 198, 149, 0.7), -6px 6px rgba(242, 198, 149, 0.7), -7px 7px rgba(242, 198, 149, 0.7), -8px 8px rgba(242, 198, 149, 0.7);
+    -moz-box-shadow: -1px 1px rgba(242, 198, 149, 0.7), -2px 2px rgba(242, 198, 149, 0.7), -3px 3px rgba(242, 198, 149, 0.7), -4px 4px rgba(242, 198, 149, 0.7), -5px 5px rgba(242, 198, 149, 0.7), -6px 6px rgba(242, 198, 149, 0.7), -7px 7px rgba(242, 198, 149, 0.7), -8px 8px rgba(242, 198, 149, 0.7);
+    box-shadow: -1px 1px rgba(242, 198, 149, 0.7), -2px 2px rgba(242, 198, 149, 0.7), -3px 3px rgba(242, 198, 149, 0.7), -4px 4px rgba(242, 198, 149, 0.7), -5px 5px rgba(242, 198, 149, 0.7), -6px 6px rgba(242, 198, 149, 0.7), -7px 7px rgba(242, 198, 149, 0.7), -8px 8px rgba(242, 198, 149, 0.7);
+    z-index: 5;
+    margin-left: -4px; }
 
 /* end .nav */
 /*********************
@@ -530,10 +682,36 @@ mobile. Make sure to double check these!
 /* end .footer-links */
 /* MD CUSTOM */
 ul.lineup li {
-  margin-right: 23px;
   margin-left: 0;
   float: left;
-  width: 30%; }
+  width: 33%; }
+
+div.jp-title {
+  font-weight: bold;
+  text-align: center; }
+
+div.jp-title,
+div.jp-playlist {
+  width: 450px;
+  /*background-color:#d0d2d3;*/
+  height: 400px;
+  overflow: auto;
+  margin-left: 31px; }
+
+a#expand_collapse {
+  text-indent: -9999px;
+  display: inline;
+  background: url(../img/wtf_playlist.png);
+  float: left;
+  height: 40px;
+  width: 120px;
+  min-width: 120px;
+  margin: 8px 0 0 21px;
+  z-index: 9999;
+  position: relative;
+  -webkit-box-shadow: 1px -1px rgba(185, 216, 208, 0.7), 2px -2px rgba(185, 216, 208, 0.7), 3px -3px rgba(185, 216, 208, 0.7), 4px -4px rgba(185, 216, 208, 0.7), 5px -5px rgba(185, 216, 208, 0.7), 6px -6px rgba(185, 216, 208, 0.7), 7px -7px rgba(185, 216, 208, 0.7), 8px -8px rgba(185, 216, 208, 0.7);
+  -moz-box-shadow: 1px -1px rgba(185, 216, 208, 0.7), 2px -2px rgba(185, 216, 208, 0.7), 3px -3px rgba(185, 216, 208, 0.7), 4px -4px rgba(185, 216, 208, 0.7), 5px -5px rgba(185, 216, 208, 0.7), 6px -6px rgba(185, 216, 208, 0.7), 7px -7px rgba(185, 216, 208, 0.7), 8px -8px rgba(185, 216, 208, 0.7);
+  box-shadow: 1px -1px rgba(185, 216, 208, 0.7), 2px -2px rgba(185, 216, 208, 0.7), 3px -3px rgba(185, 216, 208, 0.7), 4px -4px rgba(185, 216, 208, 0.7), 5px -5px rgba(185, 216, 208, 0.7), 6px -6px rgba(185, 216, 208, 0.7), 7px -7px rgba(185, 216, 208, 0.7), 8px -8px rgba(185, 216, 208, 0.7); }
 
 /******************************************************************
 Site Name: 
@@ -549,11 +727,11 @@ be seen on the Desktop.
   margin: 0 auto;
   padding: 0;
   width: 1140px;
-  height: 32px;
+  height: 48px;
   overflow: hidden; }
 
 ul.lineup li {
-  width: auto; }
+  width: 25%; }
 
 /* 
 you can call the larger styles if you want, but there's really no need 

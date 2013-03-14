@@ -20,6 +20,8 @@ body {
 	font-size: 18px;
 	line-height: 1.5;
 	color: #565656;
+	/*background: $wtf-gray;*/
+	background: white;
 }
 
 /********************
@@ -79,11 +81,11 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-	color: $wtf-purple;
+	color: $wtf-black;
 
 	/* on hover */
 	&:hover, &:focus {
-		color: $wtf-black;
+		color: $wtf-purple;
 	}
 
 	/* on click */
@@ -154,7 +156,10 @@ HEADER SYTLES
 
 .header {}
 
-	#logo {}
+	#logo {
+		display: block;
+		margin: 0 auto;
+	}
 
 /*********************
 NAVIGATION STYLES
@@ -171,15 +176,21 @@ and more scalable.
 .nav {
 	border: 1px solid #ccc;
 	border-bottom: 0;
+	margin: 0 auto;
+	text-align: center;
+	font-family: $wtf-sc-semibold;
 
 	li {
 
+		display: inline;
+
 		a {
-			display: block;
+			/*display: block;*/
+			
 			text-decoration: none;
 			padding: 10px 10px;
-			background-color: #eee;
-			border-bottom: 1px solid #ccc;
+			/*background-color: #eee;*/
+			/*border-bottom: 1px solid #ccc;*/
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -408,7 +419,7 @@ PAGE NAVI STYLES
 	.bones_page_navi {
 
 		li {
-			float: left;
+			/*float: left;*/
 			margin-left: 10px;
 
 			a {
@@ -841,20 +852,121 @@ FOOTER STYLES
 
 /* LINEUP PAGE */
 
+
+
 ul.lineup li img {
 	width: 100%;
 	height: 100%;
+	border: 1px solid #cccccc;
+
 }
 
 ul.lineup li a {
+	position: relative;
 	font-size: 30px;
 	text-decoration: none;
-	text-shadow: -1px 1px 0px $wtf-foam,
-                 -2px 2px 0px $wtf-orange;
+	/*text-shadow: -1px 1px 0px $wtf-foam,
+                 -2px 2px 0px $wtf-orange;*/
+    color: $wtf-black;
+}
+
+h3.artist-name {
+	display: inline;
+	margin:0; padding: 0;
+	line-height: 1;
+}
+
+.lineup-artist {
+	padding: 15px;
+	position: relative;
+	/*background: $wtf-gray;*/
+	background: white;
+	/*border: 1px solid $wtf-orange;*/
+}
+
+@-webkit-keyframes barberpole {
+  from { background-position: 0 0; }
+  to   { background-position: 60px 30px; }
+}
+
+/*.lineup-artist-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    45deg, 
+    rgba($wtf-foam, 0.2)  25%, 
+    transparent       25%, 
+    transparent       50%, 
+    rgba($wtf-foam, 0.2)  50%, 
+    rgba($wtf-foam, 0.2)  75%, 
+    transparent       75%, 
+    transparent
+  );  
+  -webkit-transition: opacity 0.4s ease;
+  -webkit-animation: barberpole 0.5s linear infinite;
+}*/
+
+.lineup-artist-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  
+  /*background: url(../img/lineup_hover.jpg);*/
+  background: $wtf-black;
+  
+  -webkit-transition: opacity 0.4s ease;
+  -webkit-animation: barberpole 0.5s linear infinite;
+}
+
+.lineup-artist:hover .lineup-artist-hover {
+  /*opacity: 1;*/
+  opacity: 0.2;
 }
 
 
 /* GENERAL */
+
+h1, h2 {
+	text-shadow: -2px 2px 1px $wtf-foam,
+				 -3px 3px 1px $wtf-orange;
+				 
+
+}
+
+/*h1, h2 {
+	text-shadow: -2px 2px 2px $wtf-purple
+
+}*/
+
+.full-width img {
+	height: auto;
+	width: 100%;
+}
+
+.article-header h2 {
+	margin-bottom: 0;
+}
+.entry-content p {
+	margin: 0;
+}
+
+#footer-graphic {
+	background: url(../img/footer_play.png) bottom;
+	height: 205px;
+	width: 100%;
+	/*position: fixed;
+	bottom:-150px;
+	left: 0;*/
+
+}
 
 #persistent-wrapper {
     position: fixed;
@@ -863,41 +975,105 @@ ul.lineup li a {
     width: 100%;
     margin: 0;
     padding: 0;
-    background: #d0d2d3;
+    /*background: darken($wtf-gray, 20%);*/
+    /*background: #cccccc;*/
     z-index: 9999;
 }
 
 #persistent-bar {
     margin: 0 auto;
     padding: 0;
-    width: 100%;
-    height: 32px;
+    width: 98%;
+    /*background: #ccc;*/
+    height: 47px;
     overflow: hidden;
 }
 
-a#expand_collapse {
-	text-indent:-9999px;
-    background:url(../img/wtf_playlist.png);
-	float: left;
-	height:32px;
-    width:112px;
-    min-width:112px;
-}
 
-a#expand_collapse:hover {
+/*a#expand_collapse:hover {
     background-position: 112px 0;
-}
+    transition: none;
+   	-webkit-transition: none;
+}*/
 
-a#expand_collapse.flip {
+/*a#expand_collapse.flip {
     background-position:0 -32px;
-}
-a#expand_collapse.flip:hover {
+}*/
+/*a#expand_collapse.flip:hover {
     background-position:112px -32px;
+}*/
+
+
+#wtf_fb, #wtf_tw {
+    float:left;
+    width:40px;
+    height:40px;
+    min-width:40px;
+    margin: 8px 0 0 2px;
+    padding:0;
+    text-indent:-9999px;
+    position:relative;
+    z-index:9999;
+}
+#wtf_fb {
+    background:url(../img/wtf_fb.png);
+  	@include box-shadow ( 1px -1px $wtf-orange-shadow,
+				2px -2px $wtf-orange-shadow,
+				3px -3px $wtf-orange-shadow,
+				4px -4px $wtf-orange-shadow,
+				5px -5px $wtf-orange-shadow,
+				6px -6px $wtf-orange-shadow,
+				7px -7px $wtf-orange-shadow,
+				8px -8px $wtf-orange-shadow ); 
+
+ 
+}
+#wtf_tw {
+    background:url(../img/wtf_tw.png);
+   	@include box-shadow ( 1px -1px $wtf-blue-shadow,
+				2px -2px $wtf-blue-shadow,
+				3px -3px $wtf-blue-shadow,
+				4px -4px $wtf-blue-shadow,
+				5px -5px $wtf-blue-shadow,
+				6px -6px $wtf-blue-shadow,
+				7px -7px $wtf-blue-shadow,
+				8px -8px $wtf-blue-shadow );
+}
+/*#wtf_fb:hover, #wtf_tw:hover {
+    background-position:0 -32px;
+}*/
+
+
+/* TWITTER */
+
+.wtf-tweets { border: 1px solid #ccc; padding: 5px;}
+.tweets { color: $wtf-black; width: 360px; background: white; border: 1px solid #AAA; padding: 5px; height: 288px; overflow:scroll; }
+.tweet { overflow: hidden; clear: both; text-align: left; margin-bottom: 16px; border-bottom: 1px solid #ddd; padding-bottom: 5px; /*margin-left: 8px; */margin-right: 8px; }
+.tweet.first { border: none; margin-bottom: 0px; }
+.tweet_foto { float: left; margin-right: 8px; }
+.tweet_text { float: left; font-size: 12px; width: 345px; line-height: 16px; }
+.tweet_text a { color: $wtf-blue; }
+.tweet_text a:hover { color: $wtf-orange; }
+.tweet_text a.profile, .soundcloud_artist { color: $wtf-purple; text-decoration: none; font-weight: bold; }
+.tweet_text span { display: block; color: #ccc; }
+
+
+
+.fixed {
+      position:fixed !important;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      z-index: 9999;
 }
 
-div.jp-audio {
-    font-family: 'WhitneySBC', Helvetica, Arial, sans-serif;
+.fixed .menu-nav-1 {
+	text-align: center;
+	width: 1140px;
+	display: inline-block;
 }
+
+
 
 /* SINGLE ARTIST PAGE */
 
@@ -908,6 +1084,78 @@ div.jp-audio {
 .artist_sidebar {
 	margin-top: 89px;
 }
+
+.lineup_mp3 {
+    height:21px;
+    width:21px;
+    background:url('http://whatthefestival.com/grfx/speakerPlay.jpg');
+    margin:0;
+    padding:0;
+    text-indent:-9999px;
+    display:inline-block;
+}
+
+.lineup_mp3:hover {
+    background-position:0 -21px;
+}
+
+a.details_mp3 {
+    font-size: 24px;
+    float:left;
+    padding-top:20px;
+    color: #666;
+    text-decoration: none;
+    font-family: $wtf-sc-semibold;
+    line-height: 1em;
+}
+a.details_mp3:hover {
+    color: #f7921e
+}
+
+.details_mp3 {
+    margin-bottom: 20px;
+    width:100%;
+}
+.details_mp3 div {
+    background:url('http://whatthefestival.com/grfx/new_speaker_details.jpg');
+    height: 48px;
+    width:48px;
+    margin-top:-13px;
+    padding:0;
+    float:left;
+}
+.details_mp3:hover div {
+    background-position:0 -48px;
+}
+
+.www, .fb, .tw, .sc {
+    width: 48px;
+    height: 48px;
+    float:left;
+    text-indent:-9999px;
+    margin-right:3px;
+}
+
+.www:hover, .fb:hover, .tw:hover, .sc:hover {
+	background-position: -48px 0;
+}
+
+.www {
+    background: url(../img/social_www.jpg) 0 -48px;
+}
+
+.fb {
+    background: url(../img/social_fb.jpg) 0 -48px;
+}
+
+.tw {
+    background: url(../img/social_tw.jpg) 0 -48px;
+}
+
+.sc {
+    background: url(../img/social_sc.jpg) 0 -48px;
+}
+
 
 /* HOMEPAGE */
 

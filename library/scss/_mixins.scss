@@ -66,10 +66,21 @@ $link-color:        $bones-pink;
 $link-hover:        darken($link-color, 9%);
 
 $wtf-blue: 			#25aae2;
+$wtf-blue-shadow: 	rgba(168,203,221,0.7);
+
 $wtf-purple: 		#902a8d;
+$wtf-purple-shadow: rgba(193,154,186,0.7);
+
 $wtf-foam: 			#59c4be;
+$wtf-foam-shadow:   rgba(185,216,208,0.7);
+
 $wtf-orange: 		#f69222;
+/*$wtf-orange-shadow: #f2c695;*/
+$wtf-orange-shadow: rgba(242,198,149,0.7);
+/*$wtf-orange-shadow: rgba(246,146,35,0.2);*/
+
 $wtf-black: 		#242021;
+$wtf-gray: 			#f2eee7;
 
 /*
 Here's a great tutorial on how to
@@ -95,26 +106,7 @@ $wtf-sc-black: 				"Whitney-SC-Black", Helvetica, Arial, sans-serif;
 
 $wtf-light: 				"Whitney-Light", Helvetica, Arial, sans-serif;
 $wtf-medium: 				"Whitney-Medium", Helvetica, Arial, sans-serif;
-
-/* 	To embed your own fonts, use this syntax
-	and place your fonts inside the
-	library/fonts folder. For more information
-	on embedding fonts, go to:
-	http://www.fontsquirrel.com/
-	Be sure to remove the comment brackets.
-*/
-
-/*	@font-face {
-    	font-family: 'Font Name';
-    	src: url('library/fonts/font-name.eot');
-    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
-    	font-weight: normal;
-    	font-style: normal;
-	}
-*/
+$wtf-book: 					"Whitney-Book", Helvetica, Arial, sans-serif;
 
 @font-face {
     font-family: 'Whitney-Condensed-Light';
@@ -154,6 +146,11 @@ $wtf-medium: 				"Whitney-Medium", Helvetica, Arial, sans-serif;
 @font-face {
     font-family: 'Whitney-Medium';
     src: url('http://whatthefestival.com/assets/fonts/WhitneyHTF-Medium.otf');
+}
+
+@font-face {
+    font-family: 'Whitney-Book';
+    src: url('http://whatthefestival.com/assets/fonts/WhitneyHTF-Book.otf');
 }
 
 /*
@@ -238,6 +235,44 @@ really slow down your CSS. Don't overdue it.
 	background-image: -o-linear-gradient(top, $from, $to);
 	background-image: linear-gradient(to bottom, $from, $to);
 }
+
+
+@mixin box-shadow($shadow1, $shadow2:false, $shadow3:false, $shadow4:false, $shadow5:false, $shadow6:false, $shadow7:false, $shadow8:false) {
+ $params: $shadow1;
+  @if $shadow2 
+    { $params: $shadow1, $shadow2; }
+    @if $shadow3 != false
+      { $params: $shadow1, $shadow2, $shadow3; }
+      @if $shadow4 != false
+        { $params: $shadow1, $shadow2, $shadow3, $shadow4; }
+        @if $shadow5 != false
+          { $params: $shadow1, $shadow2, $shadow3, $shadow4, $shadow5; }
+          @if $shadow6 != false
+          { $params: $shadow1, $shadow2, $shadow3, $shadow4, $shadow5, $shadow6; }
+	          @if $shadow7 != false
+	          { $params: $shadow1, $shadow2, $shadow3, $shadow4, $shadow5, $shadow6, $shadow7; }
+		          @if $shadow8 != false
+		          { $params: $shadow1, $shadow2, $shadow3, $shadow4, $shadow5, $shadow6, $shadow7, $shadow8; }
+
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  box-shadow: $params;
+}
+
+@mixin animate-3d {
+	-webkit-transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+	   -moz-transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+	    -ms-transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+	     -o-transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+	        transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000); /* ease-in-out */
+
+	-webkit-transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+	   -moz-transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+	    -ms-transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+	     -o-transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000); 
+	        transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000); /* ease-in-out */
+}
+
 
 /*********************
 BOX SIZING

@@ -52,8 +52,10 @@ add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 
 
-add_image_size( 'wtf-lineup', 250, 250, true );
-add_image_size( 'wtf-artistpage', 750, 999, true );
+add_image_size( 'wtf-lineup', 255, 255, true );
+add_image_size( 'wtf-artistpage', 750, 999, true);
+add_image_size( 'wtf-fourcol', 359, 200, true );
+
 
 
 

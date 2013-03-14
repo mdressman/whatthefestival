@@ -40,23 +40,29 @@ NAVIGATION STYLES
 *********************/
 
 ul.nav {
-	background: #eee;
+	
+	/*margin-top: -61px;*/
 	border: 0;
 
 	li {
-		float: left;
+		/*float: left;*/
 		position: relative;
+		/*margin: -2px;*/
+
+
 
 		a {
 			border-bottom: 0;
+			color: #ffffff;
+
 
 			/*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				background-color: #dedede;
-
+				color: $wtf-purple;
+				/*color: white;*/
 			}
 		}
 
@@ -69,20 +75,24 @@ ul.nav {
 		ul.sub-menu,
 		ul.children {
 			width: 180px;
-			border: 1px solid #ccc;
+			margin-top: 7px;
 			border-top: 0;
 			position: absolute;
 			display: none;
 			z-index: 8999;
+			text-align: left;
 
 			li {
+				display: block;
+				padding: 10px 0;
 
 				a {
 					padding-left: 10px;
 					border-right: 0;
-					display: block;
+					/*display: block;*/
 					width: 180px;
-					border-bottom: 1px solid #ccc;
+					font-size: 16px;
+					/*border-bottom: 1px solid #ccc;*/
 
 					&:hover,
 					&:focus {}
@@ -129,6 +139,204 @@ ul.nav {
 	li.current-page-ancestor {
 		a {}
 	}  /* end current highlighters */
+
+/* MD CUSTOM NAV */
+
+li.menu-item-226 a /* LINEUP */ {
+	/*float: left;*/
+	color: $wtf-black;
+	padding: 10px;
+	margin-right: -4px;
+}
+li.menu-item-226 a:hover {
+	color: $wtf-purple;
+}
+
+li.menu-item-14 /* LINEUP */ {
+	/*float: left;*/
+	background: $wtf-orange;
+	padding: 10px;
+	z-index: 10;
+	margin-right: -4px;
+	@include animate-3d;
+}
+/*li.menu-item-14:hover {
+	@include box-shadow( -1px 1px $wtf-orange-shadow,
+							-2px 2px $wtf-orange-shadow,
+							-3px 3px $wtf-orange-shadow,
+							-4px 4px $wtf-orange-shadow,
+							-5px 5px $wtf-orange-shadow,
+							-6px 6px $wtf-orange-shadow,
+							-7px 7px $wtf-orange-shadow,
+							-8px 8px $wtf-orange-shadow	);
+		
+							@include animate-3d;
+	}*/
+
+/* TICKETS */
+
+li.menu-item-66  {
+	/*float: left;
+	margin-left: 87px;*/
+	background: $wtf-foam;
+	padding: 10px;
+	@include animate-3d;
+	z-index: 9;		
+	/*margin-right: 4px;			*/
+	@include box-shadow ( -1px 1px $wtf-foam-shadow,
+						-2px 2px $wtf-foam-shadow,
+						-3px 3px $wtf-foam-shadow,
+						-4px 4px $wtf-foam-shadow,
+						-5px 5px $wtf-foam-shadow,
+						-6px 6px $wtf-foam-shadow,
+						-7px 7px $wtf-foam-shadow,
+						-8px 8px $wtf-foam-shadow );
+}
+
+
+
+li.menu-item-66 ul.sub-menu {
+	/*float: left;
+	margin-left: 87px;*/
+	background: $wtf-foam;
+	z-index: 9;			
+	@include animate-3d;	
+	@include box-shadow ( -1px 1px $wtf-foam-shadow,
+						-2px 2px $wtf-foam-shadow,
+						-3px 3px $wtf-foam-shadow,
+						-4px 4px $wtf-foam-shadow,
+						-5px 5px $wtf-foam-shadow,
+						-6px 6px $wtf-foam-shadow,
+						-7px 7px $wtf-foam-shadow,
+						-8px 8px $wtf-foam-shadow );	
+}
+
+
+
+
+li.menu-item-66 ul.sub-menu li {
+	/*border-top: 1px solid $wtf-foam-shadow;*/
+}
+
+/* EXPERIENCE */
+
+li.menu-item-13  {
+	/*float: left;
+	margin-left: 68px;*/
+	background: $wtf-purple;
+	padding: 10px;
+	@include box-shadow(-1px 1px $wtf-purple-shadow,
+						-2px 2px $wtf-purple-shadow,
+						-3px 3px $wtf-purple-shadow,
+						-4px 4px $wtf-purple-shadow,
+						-5px 5px $wtf-purple-shadow,
+						-6px 6px $wtf-purple-shadow,
+						-7px 7px $wtf-purple-shadow,
+						-8px 8px $wtf-purple-shadow);
+	z-index: 8;
+	/*margin-right: 4px;	*/
+}
+
+li.menu-item-13 a:hover {
+	color: $wtf-foam;
+}
+
+li.menu-item-13 ul.sub-menu {
+	/*float: left;
+	margin-left: 87px;*/
+	
+	background: $wtf-purple;
+	
+	@include box-shadow ( -1px 1px $wtf-purple-shadow,
+						-2px 2px $wtf-purple-shadow,
+						-3px 3px $wtf-purple-shadow,
+						-4px 4px $wtf-purple-shadow,
+						-5px 5px $wtf-purple-shadow,
+						-6px 6px $wtf-purple-shadow,
+						-7px 7px $wtf-purple-shadow,
+						-8px 8px $wtf-purple-shadow	);
+	z-index: 9;					
+}
+
+li.menu-item-13 ul.sub-menu li {
+	/*border-top: 1px solid $wtf-purple-shadow;*/
+}
+
+/* INFORMATION */
+
+li.menu-item-12  {
+	/*float: right;*/
+	background: $wtf-blue;
+	padding: 10px;
+	@include box-shadow ( -1px 1px $wtf-blue-shadow,
+						-2px 2px $wtf-blue-shadow,
+						-3px 3px $wtf-blue-shadow,
+						-4px 4px $wtf-blue-shadow,
+						-5px 5px $wtf-blue-shadow,
+						-6px 6px $wtf-blue-shadow,
+						-7px 7px $wtf-blue-shadow,
+						-8px 8px $wtf-blue-shadow );
+	z-index: 6;
+	/*margin-right: 4px;	*/
+	margin-left: -4px;
+}
+
+li.menu-item-12 ul.sub-menu {
+	/*float: left;
+	margin-left: 87px;*/
+	
+	background: $wtf-blue;
+	
+	@include box-shadow (-1px 1px $wtf-blue-shadow,
+						-2px 2px $wtf-blue-shadow,
+						-3px 3px $wtf-blue-shadow,
+						-4px 4px $wtf-blue-shadow,
+						-5px 5px $wtf-blue-shadow,
+						-6px 6px $wtf-blue-shadow,
+						-7px 7px $wtf-blue-shadow,
+						-8px 8px $wtf-blue-shadow );
+	z-index: 9;					
+}
+
+li.menu-item-12 ul.sub-menu li {
+	/*border-top: 1px solid $wtf-blue-shadow;*/
+}
+
+li.menu-item-39 /* NEWS */ {
+	/*float: right;
+	margin-right: 55px;*/
+	background: $wtf-foam;
+	padding: 10px;
+	/*@include box-shadow ( -1px 1px $wtf-foam-shadow,
+						-2px 2px $wtf-foam-shadow,
+						-3px 3px $wtf-foam-shadow,
+						-4px 4px $wtf-foam-shadow,
+						-5px 5px $wtf-foam-shadow,
+						-6px 6px $wtf-foam-shadow,
+						-7px 7px $wtf-foam-shadow,
+						-8px 8px $wtf-foam-shadow );*/
+	z-index: 7;
+}
+
+li.menu-item-11 /* GET INVOLVED */ {
+	/*float: right;
+	margin-right:47px;*/
+	background: $wtf-orange;
+	padding: 10px;
+	@include box-shadow (-1px 1px $wtf-orange-shadow,
+						-2px 2px $wtf-orange-shadow,
+						-3px 3px $wtf-orange-shadow,
+						-4px 4px $wtf-orange-shadow,
+						-5px 5px $wtf-orange-shadow,
+						-6px 6px $wtf-orange-shadow,
+						-7px 7px $wtf-orange-shadow,
+						-8px 8px $wtf-orange-shadow	);
+	z-index: 5;
+	margin-left: -4px;
+}
+
+
+
 
 } /* end .nav */
 
@@ -283,13 +491,48 @@ mobile. Make sure to double check these!
 /* MD CUSTOM */
 
 ul.lineup li {
-	margin-right: 23px;
+	
 	margin-left: 0;
 	float: left;
-	width: 30%;
+	width: 33%;
 }
 
 ul.lineup li img {
 	
+}
+
+div.jp-title {
+	font-weight:bold;
+	text-align:center;
+}
+
+div.jp-title,
+div.jp-playlist {
+	width:450px;
+	/*background-color:#d0d2d3;*/
+    height:400px;
+    overflow:auto;
+	margin-left:31px;
+}
+
+a#expand_collapse {
+	text-indent:-9999px;
+	display: inline;
+    background:url(../img/wtf_playlist.png);
+	float: left;
+	height:40px;
+    width:120px;
+    min-width:120px;
+    margin: 8px 0 0 21px;
+    z-index:9999;
+    position: relative;
+	@include box-shadow ( 1px -1px $wtf-foam-shadow,
+					2px -2px $wtf-foam-shadow,
+					3px -3px $wtf-foam-shadow,
+					4px -4px $wtf-foam-shadow,
+					5px -5px $wtf-foam-shadow,
+					6px -6px $wtf-foam-shadow,
+					7px -7px $wtf-foam-shadow,
+					8px -8px $wtf-foam-shadow );
 }
 

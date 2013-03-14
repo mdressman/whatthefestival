@@ -130,9 +130,6 @@ function bones_scripts_and_styles() {
     // register main stylesheet
     wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
-    // register jplayer stylesheet
-    wp_register_style( 'wtf-jplayer-stylesheet', get_stylesheet_directory_uri() . '/library/css/jplayer.wtf.css', array(), '', 'all' );
-
     // ie-only style sheet
     wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
 
@@ -148,6 +145,7 @@ function bones_scripts_and_styles() {
     wp_enqueue_script( 'bones-modernizr' );
     wp_enqueue_style( 'bones-stylesheet' );
     wp_enqueue_style( 'wtf-jplayer-stylesheet' );
+    
     wp_enqueue_style('bones-ie-only');
     /*
     I recommend using a plugin to call jQuery
@@ -161,9 +159,11 @@ function bones_scripts_and_styles() {
 
     wp_register_script( 'jplayer', get_stylesheet_directory_uri() . '/library/js/libs/jquery.jplayer.min.js', array( 'jquery' ), '2.2', true );
     wp_register_script( 'jplayer-playlist', get_stylesheet_directory_uri() . '/library/js/libs/jplayer.playlist.min.js', array( 'jquery' ), '2.2', true );
-
     wp_enqueue_script( 'jplayer' );
     wp_enqueue_script( 'jplayer-playlist' );
+
+    wp_register_script( 'twitlive', get_stylesheet_directory_uri() . '/library/js/libs/twitlive-min.js', array( 'jquery' ), '1.1', true );
+    wp_enqueue_script( 'twitlive' );
 
   }
 }

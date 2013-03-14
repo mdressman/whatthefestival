@@ -113,8 +113,16 @@ do they need tweaking?
 /* MD CUSTOM */
 
 ul.lineup li {
-	width: 48%;
+	width: 50%;
 	float: left;
 	
 	
+}
+
+div.jp-title {
+	display:none;
+}
+
+a#expand_collapse {
+	display: none;
 }
