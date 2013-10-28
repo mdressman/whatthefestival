@@ -16,19 +16,15 @@
 
 div.jp-audio {
 
-	/* Edit the font-size to counteract inherited font sizing.
-	 * Eg. 1.25em = 1 / 0.8em
-	 */
-
-	font-size:1.25em; /* 1.25em for testing in site pages */ /* No parent CSS that can effect the size in the demos ZIP */
 	line-height:1.6;
 	color: #666;
 	/*background-color:#d0d2d3;*/
-	width:429px;
+	width:600px;
   	float:left;
 	letter-spacing: 1px;
-  	font-family: $wtf-condensed-light;
-    margin-top:8px;
+  	font-family: $wtf-bold;
+    /*margin-top:8px;*/
+    border-top: 5px solid black;
 }
 
 div.jp-interface {
@@ -48,7 +44,7 @@ div.jp-audio div.jp-type-playlist div.jp-interface {
 
 div.jp-controls-holder {
 	clear: both;
-	width:429px;
+	width:600px;
 	margin:0 auto;
 	position: relative;
 	/*overflow:hidden;*/
@@ -63,7 +59,7 @@ div.jp-interface ul.jp-controls {
 }
 
 div.jp-audio ul.jp-controls {
-	width: 450px;
+	width: 600px;
 	padding:0;
 }
 
@@ -79,126 +75,67 @@ div.jp-interface ul.jp-controls a {
 }
 a.jp-play,
 a.jp-pause {
-	width:60px;
+	width:70px;
 	height:40px;
-    /*margin-top:5px;*/
 }
 
 a.jp-play {
-	background: url("../img/wtf_play.png") 0 0 no-repeat;
+	background: url("../img/wtf_play.jpg") 0 0 no-repeat;
 }
 
-li.wtf-play {
-	width: 60px;
-	height: 40px;
-	margin-left: 2px;
-	@include box-shadow ( 1px -1px $wtf-foam-shadow,
-						2px -2px $wtf-foam-shadow,
-						3px -3px $wtf-foam-shadow,
-						4px -4px $wtf-foam-shadow,
-						5px -5px $wtf-foam-shadow,
-						6px -6px $wtf-foam-shadow,
-						7px -7px $wtf-foam-shadow,
-						8px -8px $wtf-foam-shadow );
+a.jp-play:hover {
+	background-position: 0 -40px;
 }
-
-/*a.jp-play:hover {
-	background: url("../img/wtf_play.png") 0 -31px no-repeat;
-}*/
 a.jp-pause {
-	background: url("../img/wtf_pause.png") 0 0 no-repeat;
+	background: url("../img/wtf_pause.jpg") 0 0 no-repeat;
 	display: none;
 }
-/*a.jp-pause:hover {
-	background: url("../img/wtf_pause.png") 0 -31px no-repeat;
-}*/
+a.jp-pause:hover {
+	background-position: 0 -40px;
+}
 
 a.jp-previous, a.jp-next {
 	width:40px;
 	height:40px;
-    /*margin-top:5px;*/
 }
 
-li.wtf-prev {
+li.wtf-prev, li.wtf-next {
 	width: 40px;
 	height: 40px;
-	@include box-shadow( 1px -1px $wtf-orange-shadow,
-						2px -2px $wtf-orange-shadow,
-						3px -3px $wtf-orange-shadow,
-						4px -4px $wtf-orange-shadow,
-						5px -5px $wtf-orange-shadow,
-						6px -6px $wtf-orange-shadow,
-						7px -7px $wtf-orange-shadow,
-						8px -8px $wtf-orange-shadow	);
 }
 
 a.jp-previous {
-	background: url("../img/wtf_prev.png") 0 0 no-repeat;
+	background: url("../img/wtf_prev.jpg") 0 0 no-repeat;
 }
-/*a.jp-previous:hover {
-	background: url("../img/wtf_prev.png") 0 -31px no-repeat;
-}*/
-
-li.wtf-next {
-	margin-left: 2px;
-	width: 40px;
-	height: 40px;
-	@include box-shadow (1px -1px $wtf-blue-shadow,
-						2px -2px $wtf-blue-shadow,
-						3px -3px $wtf-blue-shadow,
-						4px -4px $wtf-blue-shadow,
-						5px -5px $wtf-blue-shadow,
-						6px -6px $wtf-blue-shadow,
-						7px -7px $wtf-blue-shadow,
-						8px -8px $wtf-blue-shadow );
+a.jp-previous:hover {
+	background-position: 0 -40px;
 }
-
 
 a.jp-next {
-	background: url("../img/wtf_next.png") 0 0 no-repeat;
+	background: url("../img/wtf_next.jpg") 0 0 no-repeat;
 }
-/*a.jp-next:hover {
-	background: url("../img/wtf_next.png") 0 -31px no-repeat;
-}*/
+a.jp-next:hover {
+	background-position: 0 -40px;
+}
 
 /* @end */
 
 #track_info {
-	font-size: 20px;
+	font-size: 13px;
     /*margin: 6px 0 0 15px;*/
-    margin-left: 2px;
-    background: $wtf-purple;
-	color: $wtf-gray;
+    /*margin-left: 2px;*/
+    /*background: $wtf-purple;*/
+	color: white;
 	height: 40px;
-	padding-left: 20px;
-	width: 302px;
+	padding-left: 10px;
+	width: 287px;
 	line-height: 40px;
 	display: inline;
-	@include box-shadow ( 1px -1px $wtf-purple-shadow,
-						2px -2px $wtf-purple-shadow,
-						3px -3px $wtf-purple-shadow,
-						4px -4px $wtf-purple-shadow,
-						5px -5px $wtf-purple-shadow,
-						6px -6px $wtf-purple-shadow,
-						7px -7px $wtf-purple-shadow,
-						8px -8px $wtf-purple-shadow	);
 }
 
 /* @group playlist */
 
-div.jp-title {
-	font-weight:bold;
-	text-align:center;
-}
 
-div.jp-title,
-div.jp-playlist {
-	width:450px;
-	/*background-color:#d0d2d3;*/
-    height:400px;
-    overflow:auto;
-	margin-left:31px;
-}
 div.jp-type-single div.jp-title,
 div.jp-type-playlist div.jp-title,
 div.jp-type-single div.jp-playlist {
@@ -301,10 +238,11 @@ div.jp-jplayer {
 
 /* mc_embed */
 #mc_embed_signup {
-    float:left;
+    float:right;
     position:relative;
     z-index: 9999;
-    margin: 8px 0 0 2px;
+    border-top: 5px solid black;
+    margin: 0;
 }
 
 #mc_embed_signup #mc_home {
@@ -330,14 +268,7 @@ div.jp-jplayer {
     padding-left: 10px;
     background: $wtf-foam;
     font-size: 13px;
-    @include box-shadow ( 1px -1px $wtf-foam-shadow,
-						2px -2px $wtf-foam-shadow,
-						3px -3px $wtf-foam-shadow,
-						4px -4px $wtf-foam-shadow,
-						5px -5px $wtf-foam-shadow,
-						6px -6px $wtf-foam-shadow,
-						7px -7px $wtf-foam-shadow,
-						8px -8px $wtf-foam-shadow );
+    float: left;
 }
 
 #mc_embed_signup #mc_home input.email {
@@ -368,29 +299,22 @@ color: white;
 }
 
 #mc_embed_signup input.button {
-    background: url(../img/wtf_join.png);
-    min-width:60px;
-    width:60px;
+    background: url(../img/wtf_join.jpg);
+    min-width:70px;
+    width:70px;
     height:40px;
-    margin: 0 0 0 -2px;
     border-radius:0;
     display: inline;
-    line-height: 33px;
-	@include box-shadow ( 1px -1px $wtf-purple-shadow,
-					2px -2px $wtf-purple-shadow,
-					3px -3px $wtf-purple-shadow,
-					4px -4px $wtf-purple-shadow,
-					5px -5px $wtf-purple-shadow,
-					6px -6px $wtf-purple-shadow,
-					7px -7px $wtf-purple-shadow,
-					8px -8px $wtf-purple-shadow	);
+    line-height: 34px;
+    font-size: 9px;
+    margin-left: -5px;
 }
 
 
-/*#mc_embed_signup input.button:hover {
-    background-position:0 -32px;
+#mc_embed_signup input.button:hover {
+    background-position:0 -40px;
     opacity:1.0;
-}*/
+}
 
 #mc_embed_signup label {
 	font-size: 28px;

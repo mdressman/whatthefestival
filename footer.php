@@ -6,11 +6,18 @@
     					<?php bones_footer_links(); ?>
 	                </nav>
 	                		
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
+					
 				
 				</div> <!-- end #inner-footer -->
 				
-				<div id="footer-graphic"></div>
+				<div id="footer-graphic">
+					<div id="credits">
+						&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.
+					
+        				<a href="http://mdressman.com" class="md" target="md">website by mdressman</a>
+        			
+        			</div>
+				</div>
 
 			</footer> <!-- end footer -->
 		
@@ -29,7 +36,7 @@
 								<li class="wtf-play"><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
 								<li class="wtf-pause"><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
 								<li class="wtf-next"><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
-								
+								<a href="javascript:;" id="expand_collapse" alt="Playlist Expand/Collapse" title="Playlist Expand/Collapse">[ Playlist ]</a> 
 		                        <li id="track_info">WTF?! LISTEN UP</li>
 							</ul>
 
@@ -46,8 +53,9 @@
 					</div>
 				</div>  <!-- #wtf_player -->
 		        
-		        <a href="javascript:;" id="expand_collapse" alt="Playlist Expand/Collapse" title="Playlist Expand/Collapse">[ Playlist ]</a> 
+		        
 
+				<a href="http://instagram.com/whatthefestival" target="ig" id="wtf_ig" alt="WTF Instagram" title="WTF Instagram">Instagram</a>  
 				<a href="http://twitter.com/whatthefestival" target="tw" id="wtf_tw" alt="WTF Twitter" title="WTF Twitter">Twitter</a>  
 				<a href="http://facebook.com/whatthefestival" target="fb" id="wtf_fb" alt="WTF Facebook" title="WTF Facebook">Facebook</a>  
 		        

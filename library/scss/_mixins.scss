@@ -65,16 +65,22 @@ $bones-blue:        #1990db;
 $link-color:        $bones-pink;
 $link-hover:        darken($link-color, 9%);
 
-$wtf-blue: 			#25aae2;
+/*$wtf-blue: 			#25aae2;*/
+$wtf-blue: 			#00a6e0;
+$wtf-dark-blue: 	#0093C6;
 $wtf-blue-shadow: 	rgba(168,203,221,0.7);
 
-$wtf-purple: 		#902a8d;
+/*$wtf-purple: 		#902a8d;*/
+$wtf-purple: 		#8f288c;
+$wtf-dark-purple: 	#752173;
 $wtf-purple-shadow: rgba(193,154,186,0.7);
 
 $wtf-foam: 			#59c4be;
+$wtf-dark-foam: 	#4DAAA5;
 $wtf-foam-shadow:   rgba(185,216,208,0.7);
 
 $wtf-orange: 		#f69222;
+$wtf-dark-orange: 	#DC831E;
 /*$wtf-orange-shadow: #f2c695;*/
 $wtf-orange-shadow: rgba(242,198,149,0.7);
 /*$wtf-orange-shadow: rgba(246,146,35,0.2);*/
@@ -107,50 +113,56 @@ $wtf-sc-black: 				"Whitney-SC-Black", Helvetica, Arial, sans-serif;
 $wtf-light: 				"Whitney-Light", Helvetica, Arial, sans-serif;
 $wtf-medium: 				"Whitney-Medium", Helvetica, Arial, sans-serif;
 $wtf-book: 					"Whitney-Book", Helvetica, Arial, sans-serif;
+$wtf-bold: 					"Whitney-Bold", Helvetica, Arial, sans-serif;
 
 @font-face {
     font-family: 'Whitney-Condensed-Light';
-    src: url('http://whatthefestival.com/assets/fonts/WhitneyHTF-LightCondensed.otf');
+    src: url('../fonts/WhitneyHTF-LightCondensed.otf');
 }
 
 @font-face {
     font-family: 'Whitney-Condensed-SemiBold';
-    src: url('http://whatthefestival.com/assets/fonts/WhitneyHTF-SemiBoldCondensed.otf');
+    src: url('../fonts/WhitneyHTF-SemiBoldCondensed.otf');
 }
 
 @font-face {
     font-family: 'Whitney-Condensed-Bold';
-    src: url('http://whatthefestival.com/assets/fonts/WhitneyHTF-BoldCondensed.otf');
+    src: url('../fonts/WhitneyHTF-BoldCondensed.otf');
 }
 
 @font-face {
     font-family: 'Whitney-Condensed-Black';
-    src: url('http://whatthefestival.com/assets/fonts/WhitneyHTF-BlackCondensed.otf');
+    src: url('../fonts/WhitneyHTF-BlackCondensed.otf');
 }
 
 @font-face {
     font-family: 'Whitney-SC-SemiBold';
-    src: url('http://whatthefestival.com/assets/fonts/WhitneyHTF-SemiBoldSC.otf');
+    src: url('../fonts/WhitneyHTF-SemiBoldSC.otf');
 }
 
 @font-face {
     font-family: 'Whitney-SC-Black';
-    src: url('http://whatthefestival.com/assets/fonts/WhitneyHTF-BlackSC.otf');
+    src: url('../fonts/WhitneyHTF-BlackSC.otf');
 }
 
 @font-face {
     font-family: 'Whitney-Light';
-    src: url('http://whatthefestival.com/assets/fonts/WhitneyHTF-Light.otf');
+    src: url('../fonts/WhitneyHTF-Light.otf');
 }
 
 @font-face {
     font-family: 'Whitney-Medium';
-    src: url('http://whatthefestival.com/assets/fonts/WhitneyHTF-Medium.otf');
+    src: url('../fonts/WhitneyHTF-Medium.otf');
 }
 
 @font-face {
     font-family: 'Whitney-Book';
-    src: url('http://whatthefestival.com/assets/fonts/WhitneyHTF-Book.otf');
+    src: url('../fonts/WhitneyHTF-Book.otf');
+}
+
+@font-face {
+    font-family: 'Whitney-Bold';
+    src: url('../fonts/WhitneyHTF-Bold.otf');
 }
 
 /*
@@ -338,4 +350,14 @@ BUTTONS
 	&:active {
 		@include css-gradient( darken($bones-blue, 5%), $bones-blue );
 	}
+}
+
+/* MD CUSTOM */
+
+@mixin margin-top-first-row {
+	margin-top:-210px;	
+}
+
+@mixin margin-top-second-row {
+	margin-top:-84px;	
 }

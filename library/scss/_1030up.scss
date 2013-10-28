@@ -12,12 +12,27 @@ be seen on the Desktop.
 #persistent-bar {
     margin: 0 auto;
     padding: 0;
-    width: 1140px;
-    height: 48px;
+    width: 1134px;
     overflow: hidden;
 }
 
 ul.lineup li {
 	width: 25%;
+}
 
+ul.ot-lineup li {
+	height: 365px;
+}
+
+.article-header h2 {
+	font-size: 30px;
+}
+
+a#home_logo {
+	display: block;
+	float:left;
+	margin-left: -223px;
+}
+a#mobile_logo {
+	display: none;
 }

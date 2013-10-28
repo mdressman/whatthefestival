@@ -1,0 +1,95 @@
+/* LAYERSLIDER */
+
+jQuery("#layerslider_12").layerSlider({
+    width : '1134px',
+    height : '468px',
+    responsive : true,
+    responsiveUnder : 0,
+    sublayerContainer : 0,
+    autoStart : true,
+    pauseOnHover : true,
+    firstLayer : 1,
+    animateFirstLayer : true,
+    randomSlideshow : false,
+    twoWaySlideshow : true,
+    loops : 0,
+    forceLoopNum : true,
+    autoPlayVideos : true,
+    autoPauseSlideshow : 'auto',
+    youtubePreview : 'maxresdefault.jpg',
+    keybNav : true,
+    touchNav : true,
+    skin : 'noskin',
+    skinsPath : 'http://mdressman.com/clients/wtf2013/wp-content/plugins/LayerSlider/skins/',
+    globalBGColor : 'transparent',
+    navPrevNext : false,
+    navStartStop : false,
+    navButtons : false,
+    hoverPrevNext : false,
+    hoverBottomNav : false,
+    thumbnailNavigation : 'hover',
+    tnWidth : 100,
+    tnHeight : 60,
+    tnContainerWidth : '60%',
+    tnActiveOpacity : 35,
+    tnInactiveOpacity : 100,
+    imgPreload : true,
+	yourLogo : false,
+    yourLogoStyle : 'left: 10px; top: 10px;',
+    yourLogoLink : false,
+    yourLogoTarget : '_self',
+    cbInit : function(element) { },
+    cbStart : function(data) { },
+    cbStop : function(data) { },
+    cbPause : function(data) { },
+    cbAnimStart : function(data) { },
+    cbAnimStop : function(data) { },
+    cbPrev : function(data) { },
+    cbNext : function(data) { }
+});
+
+
+/* RESPONSIVE JS */
+
+/* getting viewport width */
+var responsive_viewport = $(window).width();
+/* if is below 481px */
+if (responsive_viewport < 481) {
+} /* end smallest screen */
+/* if is larger than 481px */
+if (responsive_viewport > 481) {
+} /* end larger than 481px */
+/* if is above or equal to 768px */
+if (responsive_viewport >= 768) {
+    /* load gravatars */
+    $('.comment img[data-gravatar]').each(function(){
+        $(this).attr('src',$(this).attr('data-gravatar'));
+    });
+}
+/* off the bat large screen actions */
+if (responsive_viewport > 1030) {   
+}
+
+/* HOME SOCIAL */
+
+jQuery(".wtf-tweets").liveTweets({operator: "from:whatthefestival", showThumbnails: false});
+
+jQuery("#2013-hidden-parent").AlpinePhotoTilesPlugin({
+    id:"2013",
+    style:"wall",
+    shape:"vertical",
+    perRow:"3",
+    imageLink:0,
+    imageBorder:0,
+    imageShadow:0,
+    imageCurve:0,
+    imageHighlight:0,
+    lightbox:0,
+    galleryHeight:0, // Keep for Compatibility
+    galRatioWidth:800,
+    galRatioHeight:600,
+    highlight:"#902a8d",
+    pinIt:0,
+    siteURL:"http://mdressman.com/clients/wtf2013",
+    callback: ""
+  });

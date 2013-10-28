@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: What The Festival 2013
+Author: Matthew Dressman
 
 Stylesheet: Base Mobile Stylesheet
 
@@ -19,7 +19,7 @@ body {
 	font-family: $wtf-medium;
 	font-size: 18px;
 	line-height: 1.5;
-	color: #565656;
+	color: #000000;
 	/*background: $wtf-gray;*/
 	background: white;
 }
@@ -81,11 +81,12 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-	color: $wtf-black;
+	color: $wtf-dark-purple;
+	text-decoration: none;
 
 	/* on hover */
 	&:hover, &:focus {
-		color: $wtf-purple;
+		color: black;
 	}
 
 	/* on click */
@@ -143,6 +144,12 @@ h4, .h4 {
 	font-weight: 700;
 }
 
+h4.widgettitle {
+	font-size: 1.75em;
+	line-height: 1.4em;
+	margin-bottom: 0.375em;
+}
+
 h5, .h5 {
 	font-size: 0.846em;
 	line-height: 2.09em;
@@ -156,9 +163,17 @@ HEADER SYTLES
 
 .header {}
 
-	#logo {
-		display: block;
+	a#home_logo {
+		display: none;
 		margin: 0 auto;
+	}
+
+	a#mobile_logo {
+		display: block;
+
+		img {
+			width: 100%;
+		}
 	}
 
 /*********************
@@ -178,7 +193,10 @@ and more scalable.
 	border-bottom: 0;
 	margin: 0 auto;
 	text-align: center;
-	font-family: $wtf-sc-semibold;
+	font-family: $wtf-condensed-semibold;
+	font-size: 20px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
 
 	li {
 
@@ -256,7 +274,8 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: 2.2em;
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
 
 		.hentry {
@@ -289,6 +308,9 @@ POSTS & CONTENT STYLES
 		/* post meta */
 		.byline {
 			color: #999;
+			font-style: italic;
+			margin: 0 0 5px 0;
+			font-size: 12px;
 
 			time {}
 		}
@@ -296,7 +318,9 @@ POSTS & CONTENT STYLES
 		/* entry content */
 		.entry-content {
 
-			p {}
+			p {
+				font-size: 14px;
+			}
 
 
 			ul, ol, table, dl {}
@@ -407,6 +431,11 @@ POSTS & CONTENT STYLES
 		.size-large {}
 		.size-medium {}
 		.size-thumbnail {}
+
+		#gallery-1 .gallery-item {
+			margin-bottom: 0;
+			margin-right: 12px;
+		}
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -856,18 +885,20 @@ FOOTER STYLES
 
 ul.lineup li img {
 	width: 100%;
-	height: 100%;
+	height: auto;
 	border: 1px solid #cccccc;
 
 }
 
+
 ul.lineup li a {
 	position: relative;
-	font-size: 30px;
+	font-size: 19px;
 	text-decoration: none;
 	/*text-shadow: -1px 1px 0px $wtf-foam,
                  -2px 2px 0px $wtf-orange;*/
     color: $wtf-black;
+    line-height: 1;
 }
 
 h3.artist-name {
@@ -882,6 +913,25 @@ h3.artist-name {
 	/*background: $wtf-gray;*/
 	background: white;
 	/*border: 1px solid $wtf-orange;*/
+}
+
+.opulent-temple img {
+	width: 100%;
+	height: auto;
+}
+div.ot-bottom-images {
+	margin-top: 40px;
+}
+
+ul.ot-lineup li {
+	height: 460px;
+}
+
+ul.ot-lineup p.ot-dj-bio {
+	font-size: 12px;
+	font-style: italic;
+	margin: 0;
+	padding: 0;
 }
 
 @-webkit-keyframes barberpole {
@@ -934,6 +984,47 @@ h3.artist-name {
 
 /* GENERAL */
 
+.round-button {
+	border-radius: 10px;
+}
+
+.highlight {
+	color: $wtf-purple;
+}
+
+.split-page {
+	font-family: $wtf-condensed-semibold;
+}
+
+.split-page-button {
+	margin-top: 20px;
+	border-radius: 10px;
+	width: 746px;
+	height: 100px;
+	float: left;
+	text-indent: -9999px;
+}
+.split-page-button:hover {
+	background-position: 0 -100px;
+}
+.omg-experience-button {
+	background: url(../img/omg-experience-button.jpg);
+}
+
+
+.split-page .split-content * {
+	margin-top: 0;
+}
+
+.split-content p {
+	font-size: 20px;
+}
+
+.split-page ul li {
+	font-size: 18px;
+	list-style: square inside;
+}
+
 h1, h2 {
 	text-shadow: -2px 2px 1px $wtf-foam,
 				 -3px 3px 1px $wtf-orange;
@@ -941,31 +1032,77 @@ h1, h2 {
 
 }
 
+h1.section-heading {
+	margin: 10px 0;
+	padding-left: 20px;
+	background: url(../img/section_triangle_purple.png) no-repeat top left;
+}
+
 /*h1, h2 {
 	text-shadow: -2px 2px 2px $wtf-purple
 
 }*/
 
-.full-width img {
+
+
+.full-width img, .split-page img {
 	height: auto;
 	width: 100%;
 }
 
-.article-header h2 {
+.full-width .vendors-page img {
+	width: 500px;
+	height: auto;
+}
+
+.food-list {
+	margin-top: 30px;
+}
+
+.food-list h2, .food-list h3 {
+	margin: 0;
+}
+
+.full-width h1 {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.full-width p {
+	margin-top: 5px;
+}
+
+.article-header h1, .article-header h3, .article-header h2 {
 	margin-bottom: 0;
+	margin-top: 0;
+}
+.article-header h2 {
+	font-size: 20px;
 }
 .entry-content p {
 	margin: 0;
 }
 
 #footer-graphic {
-	background: url(../img/footer_play.png) bottom;
-	height: 205px;
+	background: url(../img/web-Footer.png) bottom;
+	height: 146px;
 	width: 100%;
 	/*position: fixed;
 	bottom:-150px;
 	left: 0;*/
+}
 
+#credits {
+	width: 1134px;
+	margin: 0 auto;
+	padding-top:80px;
+	font-size: 12px;
+	text-shadow: 1px 1px 1px #ccc;
+}
+
+a.md {
+	float: none;
+	text-decoration: none;
 }
 
 #persistent-wrapper {
@@ -977,7 +1114,9 @@ h1, h2 {
     padding: 0;
     /*background: darken($wtf-gray, 20%);*/
     /*background: #cccccc;*/
+    background: black;
     z-index: 9999;
+
 }
 
 #persistent-bar {
@@ -985,69 +1124,43 @@ h1, h2 {
     padding: 0;
     width: 98%;
     /*background: #ccc;*/
-    height: 47px;
+    /*height: 47px;*/
+    height: 45px;
     overflow: hidden;
 }
 
-
-/*a#expand_collapse:hover {
-    background-position: 112px 0;
-    transition: none;
-   	-webkit-transition: none;
-}*/
-
-/*a#expand_collapse.flip {
-    background-position:0 -32px;
-}*/
-/*a#expand_collapse.flip:hover {
-    background-position:112px -32px;
-}*/
-
-
-#wtf_fb, #wtf_tw {
-    float:left;
+#wtf_fb, #wtf_tw, #wtf_ig {
+    float:right;
     width:40px;
     height:40px;
     min-width:40px;
-    margin: 8px 0 0 2px;
+    /*margin: 8px 0 0 2px;*/
+    /*margin: 0 0 0 2px;*/
     padding:0;
     text-indent:-9999px;
     position:relative;
     z-index:9999;
+   	margin-top: 5px;
 }
 #wtf_fb {
-    background:url(../img/wtf_fb.png);
-  	@include box-shadow ( 1px -1px $wtf-orange-shadow,
-				2px -2px $wtf-orange-shadow,
-				3px -3px $wtf-orange-shadow,
-				4px -4px $wtf-orange-shadow,
-				5px -5px $wtf-orange-shadow,
-				6px -6px $wtf-orange-shadow,
-				7px -7px $wtf-orange-shadow,
-				8px -8px $wtf-orange-shadow ); 
-
- 
+    background:url(../img/wtf_fb.jpg);
 }
 #wtf_tw {
-    background:url(../img/wtf_tw.png);
-   	@include box-shadow ( 1px -1px $wtf-blue-shadow,
-				2px -2px $wtf-blue-shadow,
-				3px -3px $wtf-blue-shadow,
-				4px -4px $wtf-blue-shadow,
-				5px -5px $wtf-blue-shadow,
-				6px -6px $wtf-blue-shadow,
-				7px -7px $wtf-blue-shadow,
-				8px -8px $wtf-blue-shadow );
+    background:url(../img/wtf_tw.jpg);
 }
-/*#wtf_fb:hover, #wtf_tw:hover {
-    background-position:0 -32px;
-}*/
+#wtf_ig {
+    background:url(../img/wtf_ig.jpg);
+}
+
+#wtf_fb:hover, #wtf_tw:hover, #wtf_ig:hover {
+    background-position:0 -40px;
+}
 
 
 /* TWITTER */
 
-.wtf-tweets { border: 1px solid #ccc; padding: 5px;}
-.tweets { color: $wtf-black; width: 360px; background: white; border: 1px solid #AAA; padding: 5px; height: 288px; overflow:scroll; }
+.wtf-tweets { width: 100%; padding: 5px; border: 1px solid #ccc; }
+.tweets { color: $wtf-black; width: 100%; background: white; border: 1px solid #AAA; padding: 5px; height: 288px; overflow:scroll; }
 .tweet { overflow: hidden; clear: both; text-align: left; margin-bottom: 16px; border-bottom: 1px solid #ddd; padding-bottom: 5px; /*margin-left: 8px; */margin-right: 8px; }
 .tweet.first { border: none; margin-bottom: 0px; }
 .tweet_foto { float: left; margin-right: 8px; }
@@ -1069,7 +1182,7 @@ h1, h2 {
 
 .fixed .menu-nav-1 {
 	text-align: center;
-	width: 1140px;
+	width: 1134px;
 	display: inline-block;
 }
 
@@ -1082,7 +1195,7 @@ h1, h2 {
 }
 
 .artist_sidebar {
-	margin-top: 89px;
+	margin-top: 59px;
 }
 
 .lineup_mp3 {
@@ -1102,11 +1215,12 @@ h1, h2 {
 a.details_mp3 {
     font-size: 24px;
     float:left;
-    padding-top:20px;
+    padding-top:13px;
     color: #666;
     text-decoration: none;
     font-family: $wtf-sc-semibold;
     line-height: 1em;
+    width: 162px;
 }
 a.details_mp3:hover {
     color: #f7921e
@@ -1123,6 +1237,7 @@ a.details_mp3:hover {
     margin-top:-13px;
     padding:0;
     float:left;
+
 }
 .details_mp3:hover div {
     background-position:0 -48px;
@@ -1159,10 +1274,523 @@ a.details_mp3:hover {
 
 /* HOMEPAGE */
 
-#home-features {
-	margin: 30px 0;
+.ls-container h1 {
+	font-size: 46px;
+	/*background: url(../img/trans-white.png) repeat;*/
+	background: white;
+	padding: 5px 30px !important;
+	/*margin: 0 43% !important;*/
+	position: absolute;
+	bottom: 0;
+	top: 396px !important; 
+
 }
 
-.home-feature {
+#news-feed {
+	margin-bottom: 45px;
+}
+
+#news-feed article {
+	margin-top: 45px;
+} 
+
+.news-feed img {
+	width: 100%;
+	height: auto;
+}
+
+#home-social h1 {
+	background: url(../img/section_triangle_purple.png) no-repeat top left;
+}
+
+#home-social h2 {
+	color: white;
+}
+
+
+#home-features h2, #home-social h2 {
+	text-shadow: none;
+	font-size: 20px;
+	margin: 0;
+}
+
+#home-social div.stream {
+	height: 395px;
+	overflow: hidden;
+}
+
+.home-fb, .home-ig, .home-tw {
+	padding-left: 10px;
+}
+
+.home-fb {
+	background: $wtf-purple;
+}
+
+.home-ig {
+	background: $wtf-orange;
+}
+
+.home-tw {
+	background: $wtf-foam;
+}
+
+.stream.facebook {
+	border-bottom: 5px solid $wtf-purple;
+}
+
+.stream.instagram {
+	border-bottom: 5px solid $wtf-orange;
+}
+
+.stream.twitter {
+	border-bottom: 5px solid $wtf-foam;
+}
+
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+    width: 100% !important;
+}
+
+
+
+.article-header h2 {
+	text-shadow: none;
+	color: $wtf-black;
+	margin-top: 0;
+}
+
+#home-features div {
+	height: 100px;
+}
+
+#home-buy-tickets, #home-rsvp, #home-poster {
+	height: 100%;
+	width: 100%;
+	text-indent: -9999px;
+	overflow: hidden;
+	margin-top: 30px;
+}
+
+#home-buy-tickets {
+	background: url(../img/placeholder-buy-tickets.jpg) no-repeat;
+}
+#home-rsvp {
+	background: url(../img/placeholder-omg.jpg) no-repeat;
+}
+#home-poster {
+	background: url(../img/placeholder-facebook-rsvp.jpg) no-repeat;	
+}
+
+#home-actions {
+	margin-top: 45px;
+}
+
+#home-actions div {
+	height: 359px;
+}
+
+#home-actions h2 {
+	text-shadow: none;
+	color: white;
+	font-size: 50px;
+	text-align: center;
+	padding-top: 80px;
+	line-height: 1em;
+}
+
+#home-actions #one {
+	background: $wtf-purple;
+	
+	&:hover {
+		background: $wtf-dark-purple;
+	}
+}
+
+#home-actions #two {
+	background: $wtf-orange;
+
+	&:hover {
+		background: $wtf-dark-orange;
+	}
+}
+
+#home-actions #three {
+	background: $wtf-foam;
+
+	&:hover {
+		background: $wtf-dark-foam;
+	}
+}
+
+
+/* NEWS FEED */
+
+#recent-posts-2 ul li a {
+	color: $wtf-purple;
+	font-family: $wtf-condensed-semibold;
+}
+
+#recent-posts-2 ul li span.post-date {
+	font-size: 12px;
+}
+
+#recent-posts-2 ul {
+	border: 1px solid #cccccc;
+	padding: 5px;
+}
+
+/* BIG ART */
+
+.page-id-1635 h3 {
+	margin: 0;
+
+}
+
+/* POLICIES */
+
+.page-id-56 {
+	font-family: $sans-serif;
+}
+
+.page-id-56 p, .page-id-56 ol li {
+	font-size: 15px;
+}
+
+.page-id-56 ol li {
+	list-style: decimal inside;
+	padding: 10px 0;
+}
+
+.collapseomatic {
+	display: block;
+	border: 1px solid #ccc;
+	margin: 10px 0;
+	padding: 0 0 0 50px;
+	font-size: 24px;
+	background-position: left center;
+}
+
+.collapseomatic, .collapseomatic_content {
+	font-family: $wtf-sc-semibold;
+}
+
+select.responsiveMenuSelect {
+	background: url(../img/arrow-down.png) no-repeat right $wtf-blue;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border-radius: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+	font-family: $wtf-sc-semibold;
+	padding: 0 13px;
+}
+
+/* TICKETS PAGE */
+
+.sold-out {
+	color: red;
+	font-size: 12px;
+}
+.price {
+	color: $wtf-blue;
+}
+
+#buy-tickets-button {
+    width: 100%;
+    height: 100px;
+    float:left;
+    text-indent:-9999px;
+    background: url(../img/buy-tickets-button.jpg);
+    border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+}
+
+#buy-tickets-button:hover {
+	background-position: 0 -100px;
+}
+
+.tickets-page img {
+	width: auto;
+}
+
+.tickets-page h2 {
+	margin-top: 0;
+}
+
+.tickets-page h3 {
+	margin-bottom: 0;
+}
+
+.tickets-page h4 {
+	margin: 0;
+	font-size: 16px;
+}
+
+.tickets-page p {
+	margin-top: 0;
+}
+
+#tickets-pick-pass {
+	background: $wtf-blue-shadow;
+	padding: 10px;
+}
+
+#tickets-pick-pass h3 {
+	margin-top: 0;
+}
+
+#tickets-pick-camping {
+	margin-top: 20px;
+	background: $wtf-foam-shadow;
+	padding: 10px;
+}
+
+#tickets-pick-boutique {
+	margin-top: 20px;
+	background: $wtf-orange-shadow;
+	padding: 10px;
+}
+
+.tickets-page-site-map {
+	width: 100% !important;
+}
+
+p.divider {
+	margin-top: 20px;
+}
+
+.buy-tickets-now {
+	color: white;
+	font-size: 24px;
+	background: $wtf-purple;
+	padding: 5px 15px;
+	border-radius: 5px;
+}
+
+.ticket-price-button {
+    width: 205px;
+    height: 63px;
+    float:left;
+    border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+}
+
+.tickets-tier1 {
+	background: url(../img/tickets-tier1-button.png) no-repeat;
+	text-indent:-9999px;
+}
+.tickets-tier2 {
+	background: url(../img/tickets-tier2-button.png) no-repeat;
+	text-indent:-9999px;
+	margin-left: 20px;
+}
+.tickets-gate-ga {
+	background: url(../img/tickets-gate-ga.png) no-repeat;
+	text-indent:-9999px;
+}
+.tickets-gate-omg {
+	background: url(../img/tickets-gate-omg.png) no-repeat;
+	text-indent:-9999px;
+}
+.tickets-gate-omg-upgrade {
+	background: url(../img/tickets-gate-omg-upgrade.png) no-repeat;
+	text-indent:-9999px;
+}
+.carcamping-tier3 {
+	background: url(../img/carcamping-tier3.png) no-repeat;
+	text-indent:-9999px;
+	margin-left: 20px;
+}
+.rvcamping-tier3 {
+	background: url(../img/rvcamping-tier3.png) no-repeat;
+	text-indent:-9999px;
+	margin-left: 20px;
+}
+.tickets-omg-tier1 {
+	background: url(../img/omg-tier1-button.png) no-repeat;
+	text-indent:-9999px;
+}
+.tickets-omg-tier2 {
+	background: url(../img/omg-experience-tier2.png) no-repeat;
+	text-indent:-9999px;
+	margin-left: 20px;
+}
+
+.tickets-omg-upgrade {
+	background: url(../img/omg-upgrade-button.png) no-repeat;
+	text-indent:-9999px;
+}
+.tickets-omg-upgrade-tier2 {
+	background: url(../img/omg-upgrade-tier2.png) no-repeat;
+	text-indent:-9999px;
+	margin-left: 20px;
+}
+.tickets-buy-general {
+	background: url(../img/tickets-buy-general.png) no-repeat;
+	text-indent:-9999px;
+}
+
+.tickets-tier2:hover, .tickets-buy-general:hover, .tickets-omg-tier2:hover, .tickets-omg-upgrade-tier2:hover,
+.carcamping-tier3:hover, .rvcamping-tier3:hover, .tickets-gate-ga:hover, .tickets-gate-omg:hover,.tickets-gate-omg-upgrade:hover {
+	background-position: 0 -63px;
+}
+
+/* GET INVOLVED */
+
+#get-involved-page div {
+	height: 260px;
+	margin-bottom: 20px;
+}
+
+.get-involved-button h2 {
+	text-shadow: none;
+	color: white;
+	font-size: 30px;
+	text-align: center;
+	padding-top: 80px;
+	line-height: 1em;
+}
+
+.get-involved-button.volunteers {
+	background: $wtf-purple;
+	
+	&:hover {
+		background: $wtf-dark-purple;
+	}
+}
+
+.get-involved-button.merch-vendors {
+	background: $wtf-orange;
+
+	&:hover {
+		background: $wtf-dark-orange;
+	}
+}
+
+.get-involved-button.food-vendors {
+	background: $wtf-foam;
+
+	&:hover {
+		background: $wtf-dark-foam;
+	}
+}
+
+.get-involved-button.street-team {
+	background: $wtf-blue;
+
+	&:hover {
+		background: $wtf-dark-blue;
+	}
+}
+
+.get-involved-button.visual-art {
+	background: $wtf-purple;
+	
+	&:hover {
+		background: $wtf-dark-purple;
+	}
+}
+
+.get-involved-button.press-media {
+	background: $wtf-orange;
+
+	&:hover {
+		background: $wtf-dark-orange;
+	}
+}
+
+.get-involved-button.workshops {
+	background: $wtf-foam;
+
+	&:hover {
+		background: $wtf-dark-foam;
+	}
+}
+
+/* PRESS PAGE */
+.press-page h3 {
+	margin-bottom: 0;
+}
+
+#gallery-1 {
+	margin: auto;
+}
+#gallery-1 .gallery-item {
+	float: left;
+	margin-top: 0;
+	margin-bottom: -3px;
+	text-align: center;
+	/*width: 16%;*/
+}
+#gallery-1 img {
+	border: 2px solid #cfcfcf;
+}
+#gallery-1 .gallery-caption {
+	margin-left: 0;
+}
+
+#gallery-1 img {
+	width: auto;
+	border: none !important;
+}
+
+/*#lightbox img {
+	max-width: 800px;
+	width: auto;
+	height: auto;
+}*/
+
+#media-gallery iframe {
+	width: 100%;
+	height: 100%;
+}
+
+/* CONTACT PAGE */
+
+.wpcf7-text, .wpcf7-textarea {
+	width: 100%;
+}
+
+.wpcf7 {
+	font-family: $wtf-condensed-semibold;
+}
+
+#contact_sidebar {
+	margin-top:0;
+}
+
+#contact_emails h4 {
+	margin-bottom: 0;
+	margin-top: 5px;
+}
+
+#contact_emails a{
+	font-family: $wtf-condensed-semibold;
+}
+
+.artist-advance {
+	h3 {
+		margin-bottom: 0;
+	}
+	h5 {
+		margin: 0;
+	}
+
+	ul {
+		list-style: circle inside;
+	}
+	p {
+		margin-top: 0;
+	}
+	a {
+		color: $wtf-orange;
+		font-weight: bolder;
+
+		&:hover {
+			color: $wtf-dark-orange;
+		}
+	}
 
 }

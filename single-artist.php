@@ -82,13 +82,9 @@
 				                echo '<iframe width="554" height="437" src="http://www.youtube.com/embed/'.$artist_data['_artist_youtube_embed'].'" frameborder="0" allowfullscreen></iframe>';				
 				            }elseif($artist_data['_artist_vimeo_embed']){ 				
 				                echo '<iframe width="359" height="283"  src="http://player.vimeo.com/video/'.$artist_data['_artist_vimeo_embed'].'?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>';				
+				            }elseif($artist_data['_artist_soundcloud_embed']){ 				
+				                echo do_shortcode('[soundcloud]' . $artist_data['_artist_soundcloud_embed'] . '[/soundcloud]');
 				            }          
-						    
-				            // if($artist_data['_artist_soundcloud_embed']){
-				            //     echo do_shortcode('[soundcloud]' . $artist_data['_artist_soundcloud_embed'] . '[/soundcloud]');
-				            // }
-
-				            // echo '<h2>Explore</h2>';
 
 							echo '<div id="artist_links">';
 							if($artist_data['_artist_website']){
@@ -110,14 +106,15 @@
 							if($artist_data['_artist_soundcloud']){
 								echo '<a title="Artist Soundcloud" alt="Artist Soundcloud" href="' . $artist_data['_artist_soundcloud'] . '" target="sc"><div class="sc">soundcloud</div></a>';
 							}	
-							echo '<div class="clear"></div></div>';
 							
-							
-
 							if($artist_data['_artist_mp3_name']){
 								echo '<a href="javascript:;" class="artist_mp3 details_mp3" id="' . $artist_data['_artist_mp3_id'] . '" name="' . $artist_data['_artist_mp3_name'] . '"><div></div>&nbsp;PLAY MP3</a><div class="clear"></div>';
 							}
 					
+							echo '<div class="clearfix"></div></div>';
+						
+							echo do_shortcode( '[social_share/]' );
+
 				         ?>        
 
 					</div>

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Fullwidth Base
+Template Name: Form
 */
 ?>
 
@@ -12,15 +12,8 @@ Template Name: Fullwidth Base
 			
 				    <div id="main" class="twelvecol first clearfix full-width" role="main">
 
-			    	   <header class="article-header">
-						
-						    <h1><?php the_title(); ?></h1>
-					
-					    </header> <!-- end article header -->
-
 						<?php the_post(); ?>
 						<?php the_content( ); ?>
-						<?php echo do_shortcode( '[social_share/]' ); ?>
 			
 				    </div> <!-- end #main -->
 				    

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Fullwidth Base
+Template Name: Contact Page
 */
 ?>
 
@@ -10,17 +10,21 @@ Template Name: Fullwidth Base
 			
 				<div id="inner-content" class="wrap clearfix">
 			
-				    <div id="main" class="twelvecol first clearfix full-width" role="main">
-
-			    	   <header class="article-header">
+				    <div id="main" class="twelvecol first clearfix contact-page" role="main">
 						
-						    <h1><?php the_title(); ?></h1>
-					
-					    </header> <!-- end article header -->
-
 						<?php the_post(); ?>
-						<?php the_content( ); ?>
-						<?php echo do_shortcode( '[social_share/]' ); ?>
+						
+						<header class="article-header">
+						    <h1><?php the_title(); ?></h1>
+					    </header> <!-- end article header -->
+				    	
+				    	<div class="eightcol first">
+				    		
+							<?php the_content( ); ?>
+
+				    	</div>
+
+				    	<?php get_sidebar( 'contact_sidebar' ); ?>
 			
 				    </div> <!-- end #main -->
 				    

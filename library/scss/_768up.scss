@@ -24,7 +24,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	max-width: 1140px;
+	max-width: 1134px;
 }
 
 /*********************
@@ -33,7 +33,14 @@ HEADER SYTLES
 
 .header {}
 
-	#logo {}
+	a#home_logo {
+		display: block;
+		float:left;
+		margin-left: -223px;
+	}
+	a#mobile_logo {
+		display: none;
+	}
 
 /*********************
 NAVIGATION STYLES
@@ -41,43 +48,33 @@ NAVIGATION STYLES
 
 ul.nav {
 	
-	/*margin-top: -61px;*/
 	border: 0;
 
 	li {
-		/*float: left;*/
+		float: left;
 		position: relative;
-		/*margin: -2px;*/
-
-
-
+		display: block;
+		
 		a {
 			border-bottom: 0;
 			color: #ffffff;
+			padding: 10px 0;
 
-
-			/*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/
 			&:hover, &:focus {
-				color: $wtf-purple;
-				/*color: white;*/
+				color: white;
 			}
 		}
 
 		&:first-child {}
 		&:last-child {}
 
-		/*
-		plan your menus and drop-downs wisely.
-		*/
 		ul.sub-menu,
 		ul.children {
 			width: 180px;
 			margin-top: 7px;
 			border-top: 0;
 			position: absolute;
+			left: 0;
 			display: none;
 			z-index: 8999;
 			text-align: left;
@@ -93,9 +90,13 @@ ul.nav {
 					width: 180px;
 					font-size: 16px;
 					/*border-bottom: 1px solid #ccc;*/
+					float:left;
+					width: 167px;
 
 					&:hover,
-					&:focus {}
+					&:focus {
+						color: white;
+					}
 
 					&:link {}
 				}
@@ -109,23 +110,18 @@ ul.nav {
 					}
 				}
 
-				/*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/
 				ul {}
 			}
 
-			/* highlight sub-menu current page */
 			li.current-menu-item,
 			li.current_page_item,
 			li.current-page-ancestor {
-				a {}
+				a {
+					/*color: $wtf-purple;*/
+				}
 			}
 		}
 
-		/* showing sub-menus */
 		&:hover ul {
 			top: auto;
 			display: block;
@@ -137,28 +133,26 @@ ul.nav {
 	li.current-menu-item,
 	li.current_page_item,
 	li.current-page-ancestor {
-		a {}
+		a { 
+			/*color: $wtf-purple;*/
+		}
 	}  /* end current highlighters */
 
 /* MD CUSTOM NAV */
 
-li.menu-item-226 a /* LINEUP */ {
-	/*float: left;*/
-	color: $wtf-black;
-	padding: 10px;
-	margin-right: -4px;
-}
-li.menu-item-226 a:hover {
-	color: $wtf-purple;
+/* LINEUP */
+
+li.menu-item-14 {
+	@include margin-top-first-row;
+	margin-left: 127px;
 }
 
-li.menu-item-14 /* LINEUP */ {
-	/*float: left;*/
-	background: $wtf-orange;
-	padding: 10px;
-	z-index: 10;
-	margin-right: -4px;
-	@include animate-3d;
+li.menu-item-14 a {
+	padding: 51px 30px;
+	
+	&:hover {
+		background: $wtf-dark-orange;
+	}
 }
 /*li.menu-item-14:hover {
 	@include box-shadow( -1px 1px $wtf-orange-shadow,
@@ -170,169 +164,163 @@ li.menu-item-14 /* LINEUP */ {
 							-7px 7px $wtf-orange-shadow,
 							-8px 8px $wtf-orange-shadow	);
 		
-							@include animate-3d;
+							
 	}*/
 
 /* TICKETS */
 
 li.menu-item-66  {
-	/*float: left;
-	margin-left: 87px;*/
-	background: $wtf-foam;
-	padding: 10px;
-	@include animate-3d;
-	z-index: 9;		
-	/*margin-right: 4px;			*/
-	@include box-shadow ( -1px 1px $wtf-foam-shadow,
-						-2px 2px $wtf-foam-shadow,
-						-3px 3px $wtf-foam-shadow,
-						-4px 4px $wtf-foam-shadow,
-						-5px 5px $wtf-foam-shadow,
-						-6px 6px $wtf-foam-shadow,
-						-7px 7px $wtf-foam-shadow,
-						-8px 8px $wtf-foam-shadow );
+	@include margin-top-second-row;
+	margin-left: 252px;
 }
 
+li.menu-item-66 a {
+	padding: 51px 26px;
 
-
-li.menu-item-66 ul.sub-menu {
-	/*float: left;
-	margin-left: 87px;*/
-	background: $wtf-foam;
-	z-index: 9;			
-	@include animate-3d;	
-	@include box-shadow ( -1px 1px $wtf-foam-shadow,
-						-2px 2px $wtf-foam-shadow,
-						-3px 3px $wtf-foam-shadow,
-						-4px 4px $wtf-foam-shadow,
-						-5px 5px $wtf-foam-shadow,
-						-6px 6px $wtf-foam-shadow,
-						-7px 7px $wtf-foam-shadow,
-						-8px 8px $wtf-foam-shadow );	
+	&:hover {
+		background: $wtf-dark-foam;
+	}
 }
 
-
-
+li.menu-item-66 ul.sub-menu {	
+	margin-top: 47px;
+	width: 126px;
+	background: $wtf-foam;
+}
 
 li.menu-item-66 ul.sub-menu li {
-	/*border-top: 1px solid $wtf-foam-shadow;*/
+	width: 100%;
+
+	&:hover {
+		background: $wtf-dark-foam;
+	}
+}
+
+li.menu-item-66 ul.sub-menu li a {
+	width: 100%;
+	padding: 0 0 0 25px;
 }
 
 /* EXPERIENCE */
 
 li.menu-item-13  {
-	/*float: left;
-	margin-left: 68px;*/
-	background: $wtf-purple;
-	padding: 10px;
-	@include box-shadow(-1px 1px $wtf-purple-shadow,
-						-2px 2px $wtf-purple-shadow,
-						-3px 3px $wtf-purple-shadow,
-						-4px 4px $wtf-purple-shadow,
-						-5px 5px $wtf-purple-shadow,
-						-6px 6px $wtf-purple-shadow,
-						-7px 7px $wtf-purple-shadow,
-						-8px 8px $wtf-purple-shadow);
-	z-index: 8;
-	/*margin-right: 4px;	*/
+	@include margin-top-first-row;
+	margin-left: 378px;
 }
 
-li.menu-item-13 a:hover {
-	color: $wtf-foam;
+li.menu-item-13 a {
+	padding: 51px 73px;
+
+	&:hover {
+		background: $wtf-dark-purple;
+	}
 }
 
 li.menu-item-13 ul.sub-menu {
-	/*float: left;
-	margin-left: 87px;*/
-	
 	background: $wtf-purple;
-	
-	@include box-shadow ( -1px 1px $wtf-purple-shadow,
-						-2px 2px $wtf-purple-shadow,
-						-3px 3px $wtf-purple-shadow,
-						-4px 4px $wtf-purple-shadow,
-						-5px 5px $wtf-purple-shadow,
-						-6px 6px $wtf-purple-shadow,
-						-7px 7px $wtf-purple-shadow,
-						-8px 8px $wtf-purple-shadow	);
-	z-index: 9;					
+	margin-top: 47px;
+	width: 252px;
 }
 
 li.menu-item-13 ul.sub-menu li {
-	/*border-top: 1px solid $wtf-purple-shadow;*/
+	width: 100%;
+
+	&:hover {
+		background: $wtf-dark-purple;
+	}
+}
+
+li.menu-item-13 ul.sub-menu li a {
+	width: 100%;
+	padding: 0 0 0 73px;
 }
 
 /* INFORMATION */
 
-li.menu-item-12  {
-	/*float: right;*/
+/*li.menu-item-12  {*/
+li.menu-item-704  {
+	@include margin-top-second-row;
+	margin-left: 630px;
+}
+
+/*li.menu-item-12 a {*/
+li.menu-item-704 a {
+	padding: 51px 42px;
+
+	&:hover {
+		background: $wtf-dark-blue;
+	}
+}
+
+/*li.menu-item-12 ul.sub-menu {*/
+li.menu-item-704 ul.sub-menu {
 	background: $wtf-blue;
-	padding: 10px;
-	@include box-shadow ( -1px 1px $wtf-blue-shadow,
-						-2px 2px $wtf-blue-shadow,
-						-3px 3px $wtf-blue-shadow,
-						-4px 4px $wtf-blue-shadow,
-						-5px 5px $wtf-blue-shadow,
-						-6px 6px $wtf-blue-shadow,
-						-7px 7px $wtf-blue-shadow,
-						-8px 8px $wtf-blue-shadow );
-	z-index: 6;
-	/*margin-right: 4px;	*/
-	margin-left: -4px;
+	margin-top: 47px;
+	width: 126px;				
 }
 
-li.menu-item-12 ul.sub-menu {
-	/*float: left;
-	margin-left: 87px;*/
-	
-	background: $wtf-blue;
-	
-	@include box-shadow (-1px 1px $wtf-blue-shadow,
-						-2px 2px $wtf-blue-shadow,
-						-3px 3px $wtf-blue-shadow,
-						-4px 4px $wtf-blue-shadow,
-						-5px 5px $wtf-blue-shadow,
-						-6px 6px $wtf-blue-shadow,
-						-7px 7px $wtf-blue-shadow,
-						-8px 8px $wtf-blue-shadow );
-	z-index: 9;					
+li.menu-item-704 ul.sub-menu li {
+/*li.menu-item-12 ul.sub-menu li {*/
+	width: 100%;
+
+	&:hover {
+		background: $wtf-dark-blue;
+	}
 }
 
-li.menu-item-12 ul.sub-menu li {
-	/*border-top: 1px solid $wtf-blue-shadow;*/
+/*li.menu-item-12 ul.sub-menu li a {*/
+li.menu-item-704 ul.sub-menu li a {
+	width: 100%;
+	padding: 0 0 0 37px;
 }
 
-li.menu-item-39 /* NEWS */ {
-	/*float: right;
-	margin-right: 55px;*/
-	background: $wtf-foam;
-	padding: 10px;
-	/*@include box-shadow ( -1px 1px $wtf-foam-shadow,
-						-2px 2px $wtf-foam-shadow,
-						-3px 3px $wtf-foam-shadow,
-						-4px 4px $wtf-foam-shadow,
-						-5px 5px $wtf-foam-shadow,
-						-6px 6px $wtf-foam-shadow,
-						-7px 7px $wtf-foam-shadow,
-						-8px 8px $wtf-foam-shadow );*/
-	z-index: 7;
+/* NEWS */
+
+li.menu-item-39 { 
+	@include margin-top-first-row;
+	margin-left: 882px;
 }
 
-li.menu-item-11 /* GET INVOLVED */ {
-	/*float: right;
-	margin-right:47px;*/
+li.menu-item-39 a {
+	padding: 51px 37px;
+
+	&:hover {
+		background: $wtf-dark-foam;
+	}
+}
+
+/* GET INVOLVED */
+
+li.menu-item-11 {
+	@include margin-top-second-row;
+	margin-left: 882px;
+	min-width: 252px;
+}
+
+li.menu-item-11 a {
+	padding: 51px 61px;
+
+	&:hover {
+		background: $wtf-dark-orange;
+	}
+}
+
+li.menu-item-11 ul.sub-menu {
 	background: $wtf-orange;
-	padding: 10px;
-	@include box-shadow (-1px 1px $wtf-orange-shadow,
-						-2px 2px $wtf-orange-shadow,
-						-3px 3px $wtf-orange-shadow,
-						-4px 4px $wtf-orange-shadow,
-						-5px 5px $wtf-orange-shadow,
-						-6px 6px $wtf-orange-shadow,
-						-7px 7px $wtf-orange-shadow,
-						-8px 8px $wtf-orange-shadow	);
-	z-index: 5;
-	margin-left: -4px;
+	width: 252px;
+	margin-top: 47px;
+}
+
+li.menu-item-11 ul.sub-menu li {
+	width: 100%;
+
+	&:hover {
+		background: $wtf-dark-orange;
+	}
+}
+
+li.menu-item-11 ul.sub-menu li a {
+	padding: 0 0 0 62px;
 }
 
 
@@ -349,7 +337,7 @@ SIDEBARS & ASIDES
 }
 
 	.widgettitle {
-		border-bottom: 2px solid #444;
+		/*border-bottom: 2px solid #444;*/
 		margin-bottom: 0.75em;
 	}
 
@@ -498,7 +486,11 @@ ul.lineup li {
 }
 
 ul.lineup li img {
-	
+
+}
+
+ul.ot-lineup li {
+	height: 430px;
 }
 
 div.jp-title {
@@ -508,31 +500,44 @@ div.jp-title {
 
 div.jp-title,
 div.jp-playlist {
-	width:450px;
-	/*background-color:#d0d2d3;*/
+	width:570px;
+	background-color:#cccccc;
     height:400px;
     overflow:auto;
-	margin-left:31px;
+	margin-left:0;
 }
 
 a#expand_collapse {
 	text-indent:-9999px;
 	display: inline;
-    background:url(../img/wtf_playlist.png);
+    background:url(../img/wtf_playlist.jpg);
 	float: left;
 	height:40px;
-    width:120px;
-    min-width:120px;
-    margin: 8px 0 0 21px;
+    width:160px;
+    min-width:160px;
     z-index:9999;
     position: relative;
-	@include box-shadow ( 1px -1px $wtf-foam-shadow,
-					2px -2px $wtf-foam-shadow,
-					3px -3px $wtf-foam-shadow,
-					4px -4px $wtf-foam-shadow,
-					5px -5px $wtf-foam-shadow,
-					6px -6px $wtf-foam-shadow,
-					7px -7px $wtf-foam-shadow,
-					8px -8px $wtf-foam-shadow );
 }
 
+a#expand_collapse:hover {
+    background-position: 0 -40px;
+}
+
+a#expand_collapse.flip {
+    background-position: 160px 0;
+}
+a#expand_collapse.flip:hover {
+    background-position:160px -40px;
+}
+
+a.md {
+	float: right;
+}
+
+#media-gallery iframe#video-pool {
+	height: 637px;
+}
+
+#media-gallery iframe#video-timelapse {
+	height: 310px;
+}

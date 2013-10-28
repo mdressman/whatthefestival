@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Lineup
+Template Name: LOL
 */
 ?>
 
@@ -10,28 +10,41 @@ Template Name: Lineup
 			
 				<div id="inner-content" class="wrap clearfix">
 			
-				    <div id="main" class="twlevecol first clearfix" role="main">
+				    <div id="main" class="twelvecol first clearfix full-width" role="main">
 
-				    	<h1>Music Lineup</h1>
+			    	   <header class="article-header">
+						
+						    <h1><?php the_title(); ?></h1>
+					
+					    </header> <!-- end article header -->
+
+						<?php the_post(); ?>
+
+						<div class="sixcol first">
+							<?php the_post_thumbnail('full'); ?>
+						</div>
+						<div class="sixcol">
+							<?php the_content( ); ?>
+						</div>
+
+						<div class="clearfix"></div>
+
+						<h2>Featuring</h2>
 
 						<?php 
 		                    $args = array(
 		                        'post_type'=> 'artist',
+		                        'category_name' => 'LOL',
 								'posts_per_page' => -1,
 								'order' => 'ASC'
 		                    );
 		                    query_posts( $args );
 		                ?>
 
-						<ul class="lineup">
+		                <ul class="lineup">
 
 					   		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-					   		<?php
-								$mp3_id = get_post_meta($post->ID, '_artist_mp3_id', true); 
-								$mp3_name = get_post_meta($post->ID, '_artist_mp3_name', true); 
-							?>
-								
 								<li class="threecol lineup-artist">
 
 									<div class="lineup-artist-hover"></div>
@@ -40,11 +53,7 @@ Template Name: Lineup
 										<?php the_post_thumbnail('wtf-lineup')?>
 										
 										<h3 class="artist-name"><?php the_title(); ?></h3>
-										<?php 
-											if ($mp3_name) { 
-										 		echo '<a href="javascript:;" id="' . $mp3_id . '" name="' . $mp3_name . '" class="artist_mp3 lineup_mp3" alt="Listen" title="Listen">{mp3}</a>';
-											}
-										?>
+										
 									</a>
 								</li>
 
@@ -52,10 +61,8 @@ Template Name: Lineup
 
 						</ul>
 			
-					<div class="clearfix"></div>
-
 				    </div> <!-- end #main -->
-    			    
+				    
 				</div> <!-- end #inner-content -->
     
 			</div> <!-- end #content -->

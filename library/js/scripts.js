@@ -69,209 +69,23 @@ jQuery(document).ready(function($) {
 	// add all your scripts here
 
     /* WTF Music Player */
-        
-        var wtf_player = new jPlayerPlaylist({
-            jPlayer: "#wtf_player",
-            cssSelectorAncestor: "#wtf_player_container"
+
+    var mp3map = new Array();
+    /* Removed artist specifics to prevent public GitHub consumption */
+
+    
+    
+    
+    var wtf_player = new jPlayerPlaylist({
+        jPlayer: "#wtf_player",
+        cssSelectorAncestor: "#wtf_player_container"
         }, [
-        {
-            title:"Emancipator - First Snow",
-            mp3:"http://whatthefestival.com/mp3/Emancipator_First_Snow.mp3"
-        },
-        {
-            title:"Big Gigantic - Nocturnal",
-            mp3:"http://whatthefestival.com/mp3/BigGigantic_Nocturnal.mp3"
-        },
-        {
-            title:"Gold Panda - Same Dream China",
-            mp3:"http://whatthefestival.com/mp3/GoldPanda_SameDreamChina.mp3"
-        },
-        {
-            title:"Bonobo - Kiara",
-            mp3:"http://whatthefestival.com/mp3/Bonobo_Kiara.mp3"
-        },
-        {
-            title:"Ghostland Observatory - Sad Sad City",
-            mp3:"http://whatthefestival.com/mp3/Ghostland_SadSadCity.mp3"
-        },
-        {
-            title:"Dillon Francis - Falling Up",
-            mp3:"http://whatthefestival.com/mp3/Dillon_Francis_Falling_Up.mp3"
-        },
-        {
-            title:"Claude VonStroke - Who's Afraid of Detroit",
-            mp3:"http://whatthefestival.com/mp3/ClaudeVonStoke_WhosAfraidofDetroit.mp3"
-        },
-        {
-            title:"Beats Antique - Cat Skillz",
-            mp3:"http://whatthefestival.com/mp3/Beats_Antique_Cat_Skillz.mp3"
-        },
-        {
-            title:"MiM0SA - Last Night In Town",
-            mp3:"http://whatthefestival.com/mp3/Mimosa_LastNightInTown.mp3"
-        },
-        {
-            title:"Paper Diamond - Same Old Song (rmx of the Weeknd)",
-            mp3:"http://whatthefestival.com/mp3/Paper_Diamond_Same_Old_Song.mp3"
-        },
-        {
-            title:"Holy Fuck - Latin Ameria",
-            mp3:"http://whatthefestival.com/mp3/HolyFuck_LatinAmerica.mp3"
-        },
-        {
-            title:"Inspired Flight - We All Want To Fly (f. Inspectah Deck)",
-            mp3:"http://whatthefestival.com/mp3/Inspired_Flight_We_All_Want_To_Fly.mp3"
-        },
-        {
-            title:"Sinjin Hawke - Crimson Tides",
-            mp3:"http://whatthefestival.com/mp3/SinjinHawke_CrimsonTides.mp3"
-        },
-        {
-            title:"Sepalcure - Pencil Pimp",
-            mp3:"http://whatthefestival.com/mp3/Sepalcure_Pencil_Pimp.mp3"
-        },
-        {
-            title:"Scuba - Flash Addict",
-            mp3:"http://whatthefestival.com/mp3/Scuba_FlashAddict.mp3"
-        },
-        {
-            title:"Bluetech - Change",
-            mp3:"http://whatthefestival.com/mp3/Bluetech_Change.mp3"
-        },
-        {
-            title:"Ana Sia - International Profile",
-            mp3:"http://whatthefestival.com/mp3/Ana_Sia_-_International_Profile.mp3"
-        },
-        {
-            title:"Danny Corn - Peebles",
-            mp3:"http://whatthefestival.com/mp3/DannyCorn_Peebles.mp3"
-        },
-        {
-            title:"EPROM - Regis Chilbin",
-            mp3:"http://whatthefestival.com/mp3/EPROM_RegisChilbin.mp3"
-        },
-        {
-            title:"GRiZ - Rock N Roll",
-            mp3:"http://whatthefestival.com/mp3/Griz_RockNRoll.mp3"
-        },
-        {
-            title:"Jupit3r - Hold On (rmx of SBTRKT)",
-            mp3:"http://whatthefestival.com/mp3/Jupit3r-SBTRKT_Hold On_Remix.mp3"
-        },
-        {
-            title:"Star Slinger - Chain Dumbin",
-            mp3:"http://whatthefestival.com/mp3/StarSlinger_ChainDumbin.mp3"
-        },
-        {
-            title:"NastyNasty - No Names",
-            mp3:"http://whatthefestival.com/mp3/nasty_nasty-no_names.mp3"
-        },
-        {
-            title:"Adventure Club - Youth (rmx of Foxes)",
-            mp3:"http://whatthefestival.com/mp3/AdventureClub_Youth_rmx_of_Foxes.mp3"
-        },
-        {
-            title:"Natasha Kmeto - Belly",
-            mp3:"http://whatthefestival.com/mp3/NatashaKmeto_Belly.mp3"
-        },
-        {
-            title:"Reva DeVito - Should Have Known",
-            mp3:"http://whatthefestival.com/mp3/RevaDeVito_ShouldHaveKnown.mp3"
-        },
-        {
-            title:"Beat Connection - Silver Screen",
-            mp3:"http://whatthefestival.com/mp3/BeatConnection_SilverScreen.mp3"
-        },
-        {
-            title:"ill-esha - Purple Legacy",
-            mp3:"http://whatthefestival.com/mp3/ill-esha_Purple_Legacy.mp3"
-        },
-        {
-            title:"Mansions on the Moon - Desert Island",
-            mp3:"http://whatthefestival.com/mp3/MOTM_-_Desert_Island.mp3"
-        },
-        {
-            title:"Gladkill - Back Where We Started",
-            mp3:"http://whatthefestival.com/mp3/Gladkill_BackWhereWeStarted.mp3"
-        },
-        {
-            title:"Sugarpill - Cats Used To Harmonize",
-            mp3:"http://whatthefestival.com/mp3/Sugarpill_CatsUsedtoHarmonize.mp3"
-        },      
-        {
-            title:"Minnesota - Jetstream",
-            mp3:"http://whatthefestival.com/mp3/Minnesota_Jetstream.mp3"
-        },
-        {
-            title:"Phutureprimitive - Center of Gravity",
-            mp3:"http://whatthefestival.com/mp3/Phutureprimitive_Center_of_Gravity.mp3"
-        },
-        {
-            title:"MartyParty - Love Doctor",
-            mp3:"http://whatthefestival.com/mp3/martyparty_love_doctor.mp3"
-        },
-        
-        {
-            title:"Laura Low - Bad Girls (rmx of M.I.A)",
-            mp3:"http://whatthefestival.com/mp3/DJLaura_MIA_BADGIRLS.mp3"
-        },
-        {
-            title:"DJ Shawna - Ssshake",
-            mp3:"http://whatthefestival.com/mp3/Ssshake-Shawna.mp3"
-        },
-        {
-            title:"Ruff Hauser - Lucid",
-            mp3:"http://whatthefestival.com/mp3/Ruffhauser_Lucid.mp3"
-        },
-        {
-            title:"Celoso - Keep Movin",
-            mp3:"http://whatthefestival.com/mp3/Celoso_KeepMovin.mp3"
-        },
-        {
-            title:"Halo Refuser - Breaking Into Step",
-            mp3:"http://whatthefestival.com/mp3/HaloRefuser_BreakingIntoStep.mp3"
-        },
-        {
-            title:"Tyler Tastemaker - I.D.G.A.F (x Quarry)",
-            mp3:"http://whatthefestival.com/mp3/TylerTastemaker_IDGAF.mp3"
-        },
-        {
-            title:"Kepi and Kat - Limelight",
-            mp3:"http://whatthefestival.com/mp3/KepiandKat_Limelight.mp3"
-        },
-        {
-            title:"Smokey and the Bandit - U Can't Fix",
-            mp3:"http://whatthefestival.com/mp3/SmokeyandtheBandit_UCantFix.mp3"
-        },
-        {
-            title:"Pussy Monster - Come Get It",
-            mp3:"http://whatthefestival.com/mp3/Pussy_Monster-ComeGetIt.mp3"
-        },
-        {
-            title:"Kitty-D - ReStitch",
-            mp3:"http://whatthefestival.com/mp3/KittyD_restitch.mp3"
-        },
-        {
-            title:"DJ Dials - Handle Riddim",
-            mp3:"http://whatthefestival.com/mp3/DJDials_HandleRiddim.mp3"
-        },
-        {
-            title:"Geno Cochino - The Landing",
-            mp3:"http://whatthefestival.com/mp3/GenoCochino_TheLanding.mp3"
-        },
-        {
-            title:"Shovelman - Riding High",
-            mp3:"http://whatthefestival.com/mp3/Shovelman_RidingHigh.mp3"
-        },  
-        {
-            title:"Sidestep - Fuck Dat Noize",
-            mp3:"http://whatthefestival.com/mp3/Sidestep_FuckDatNoize.mp3"
-        }
+   /* Removed artist specifics to prevent public GitHub consumption */   
     ], {
         playlistOptions: {
             itemClass: "track_deets"
     },
-        swfPath: "http://whatthefestival.com/_wp/wp-content/themes/wtf2012/js/",
+        swfPath: "http://2012.whatthefestival.com/_wp/wp-content/themes/wtf2012/js/",
         supplied: "mp3",
         wmode: "window",
         loop: true
@@ -292,7 +106,7 @@ jQuery(document).ready(function($) {
         }, function(event) {
             event.preventDefault();
             $('#persistent-bar').animate({
-                height: '47px'
+                height: '45px'
             }, 'slow');
             $(this).removeClass('flip');
         });
@@ -305,57 +119,18 @@ jQuery(document).ready(function($) {
 	
     $(".wtf-tweets").liveTweets({operator: "from:whatthefestival", showThumbnails: false});
 
-
-    /* sticky nav */
-
-     //when scroll
-
-      var isMobile = {
-         Android: function() {
-         return navigator.userAgent.match(/Android/i) ? true : false;
-         },
-         BlackBerry: function() {
-         return navigator.userAgent.match(/BlackBerry/i) ? true : false;
-         },
-         iOS: function() {
-         return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;
-         },
-         Windows: function() {
-         return navigator.userAgent.match(/IEMobile/i) ? true : false;
-         },
-         any: function() {
-         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows() || viewportwidth < 760);
-         }
-        };
-
-     var aboveHeight = $('#nav-wrapper').outerHeight();
-
-     $(window).scroll(function(){
-
-
-         //if scrolled down more than the header’s height but this isn't mobile
-         if ($(window).scrollTop() > aboveHeight && !isMobile.any()) {
-
-
-             // if yes, add “fixed” class to the <nav>
-             // add padding top to the #content 
-             // (value is same as the height of the nav)
-             $('#nav_wrapper').addClass('fixed').css('top','37px').next()
-             .css('padding-top','42px');
-
-         } else {
-
-             // when scroll up or less than aboveHeight,
-             // remove the “fixed” class, and the padding-top
-             $('#nav_wrapper').removeClass('fixed').next()
-             .css('padding-top','0');
-         }
-     });
-
-    /* end sticky nav */
-
  
 }); /* end of as page load scripts */
+
+
+$(window).load(function() {  
+
+    var $container = $('#gallery-1');
+    $container.isotope({
+        layoutMode : 'fitRows'
+    });
+
+});
 
 
 /*! A fix for the iOS orientationchange zoom bug.

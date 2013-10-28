@@ -16,57 +16,17 @@ Template Name: Home
 						<?php the_content(); ?>
 						
 						<?php wp_reset_postdata(); ?>
-
-						
-						<div id="testimonials-tickets" style="margin: 30px 0;" class="clearfix">
-
-							<div id="testimonials" class="fourcol first clearfix">
-								<div style="background: #f69222; color: white; height: 100px; text-align: center;">
-									BUY TICKETS
-								</div>
-							</div>
-							<div id="buy-tickets" class="fourcol clearfix">
-								<div style="background: #59c4be; color: white; height: 100px; text-align: center;">
-									2012 PHOTO GALLERY
-								</div>
-							</div>
-							<div id="testimonials" class="fourcol clearfix">
-								<div style="background: #902a8d; color: white; height: 100px; text-align: center;">
-									FACEBOOK RSVP
-								</div>
-							</div>
-
-						</div>
-
-
-
-
-						<div id="home-features" class="clearfix">
-
-							<div class="twelvecol first clearfix">
-
-								<h1>What The Instagram</h1>
-
-								<?php echo do_shortcode( '[alpine-phototile-for-instagram user="whatthefestival" src="user_recent" imgl="instagram" dltext="Instagram" style="wall" row="6" num="6" size="Th" align="center" max="100"]' ); ?>
-								
-							</div>
-				
-						</div>
-
 						
 						<div id="news-feed" class="twelvecol first clearfix">
 
-							<h1>News Feed</h1>
-
-
 							<?php 
 								$args = array(
-									'category_name' => 'news'
+									'category_name' => 'news',
+									'showposts' => 12
 	  							);
 
 	  							query_posts( $args );
 	  						?>
-
 							
 							<?php $post_counter = 0; ?>
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -86,7 +46,26 @@ Template Name: Home
 							    <header class="article-header">
 								
 								    <h2>
+								    	<?php if ($post->ID == 1538) { ?>
+								    	<a href="http://whatthefestival.com/opulent-temple" rel="bookmark" title="<?php the_title_attribute(); ?>">
+								    	<?php } elseif ($post->ID == 1904) { ?>
+										<a href="http://whatthefestival.com/ecoshuttle" rel="bookmark" title="<?php the_title_attribute(); ?>">
+										<?php } elseif ($post->ID == 1934) { ?>
+										<a href="http://whatthefestival.com/experience/workshops" rel="bookmark" title="<?php the_title_attribute(); ?>">
+										<?php } elseif ($post->ID == 1953) { ?>
+										<a href="http://whatthefestival.com/schedule" rel="bookmark" title="<?php the_title_attribute(); ?>">
+										<?php } elseif ($post->ID == 1698) { ?>
+										<a href="http://whatthefestival.com/experience/big-art" rel="bookmark" title="<?php the_title_attribute(); ?>">
+										<?php } elseif ($post->ID == 1984) { ?>
+										<a href="http://whatthefestival.com/marketplace/food-beverage" rel="bookmark" title="<?php the_title_attribute(); ?>">	
+										<?php } elseif ($post->ID == 1854) { ?>
+										<a href="http://whatthefestival.com/marketplace/craft-vendors" rel="bookmark" title="<?php the_title_attribute(); ?>">	
+										<?php } elseif ($post->ID == 1994) { ?>
+										<a href="http://whatthefestival.com/info/getting-here" rel="bookmark" title="<?php the_title_attribute(); ?>">	
+										<?php } else { ?>
 								    	<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+								    	<? } ?>
+
 								    		<?php the_title(); ?>
 								    		<?php the_post_thumbnail( 'wtf-fourcol' ); ?>
 								    	</a>
@@ -94,30 +73,13 @@ Template Name: Home
 							
 							    </header> <!-- end article header -->
 						
-							    <section class="entry-content clearfix">
+							    <!-- <section class="entry-content clearfix">
 								    <?php the_excerpt(); ?>
-							    </section> <!-- end article section -->
+							    </section> --> <!-- end article section -->
 							
-							    <footer class="article-footer">
-	    							
-
-							    </footer> <!-- end article footer -->
-							    
-						
 						    </article> <!-- end article -->
 						
 						    <?php endwhile; ?>	
-						
-						        <?php if (function_exists('bones_page_navi')) { ?>
-						            <?php bones_page_navi(); ?>
-						        <?php } else { ?>
-						            <nav class="wp-prev-next">
-						                <ul class="clearfix">
-						        	        <li class="prev-link"><?php next_posts_link(__('&laquo; Older Entries', "bonestheme")) ?></li>
-						        	        <li class="next-link"><?php previous_posts_link(__('Newer Entries &raquo;', "bonestheme")) ?></li>
-						                </ul>
-						            </nav>
-						        <?php } ?>		
 						
 						    <?php else : ?>
 						    
@@ -135,29 +97,64 @@ Template Name: Home
 						
 						    <?php endif; ?>
 							
-							
 						</div>
 
-					<!-- <div id="home-social" class="twelvecol first clearfix">
-						<h1>Connect with us</h1>
-				
-							<div class="fb-like-box fourcol first" data-href="http://www.facebook.com/whatthefestival" data-width="359" data-show-faces="false" data-stream="true" data-border-color="#902a8d" data-header="false"></div>
+						<div class="clearfix"></div>
 
-							<div class="fourcol">
+						<!-- <div id="home-social" class="clearfix">
+
+							<div class="fourcol first stream facebook clearfix">
+								<h2 class="home-fb">Facebook</h2>
+								<div class="fb-like-box" data-href="http://www.facebook.com/whatthefestival" data-width="359" data-height="390" data-show-faces="true" data-stream="true" data-header="false" data-border-color="#fff"></div>
+								<script type="text/javascript">
+								window.fbAsyncInit=function() {
+									FB.XFBML.parse();
+								}
+								</script>
+							</div>
+
+
+							<div class="fourcol stream instagram clearfix">
+
+								<h2 class="home-ig">Instagram</h2>
+
+								<?php // echo do_shortcode( '[alpine-phototile-for-instagram user="whatthefestival" src="user_recent" imgl="instagram" dltext="Instagram" style="wall" row="3" num="9" size="Th" align="center" max="100" nocredit="1"]' ); ?>
+								
+							</div>
+
+
+							<div class="fourcol stream twitter clearfix">
+								<h2 class="home-tw">Twitter</h2>
 								<div class="wtf-tweets"></div>
-							</div>
+					        </div>
 
-							
-							
-							
+				
+						</div>
 
-							<div id="home-gallery" class="fourcol clearfix home-feature">
-								<div style="background: #888;">
-									2012 PHOTO GALLERY!
+						<div class="clearfix"></div> -->
+
+						<div id="home-actions" class="twelvecol first clearfix">
+						
+							<a href="http://whatthefestival2013.eventbrite.com" target="_blank">
+								<div id="one" class="fourcol first clearfix">
+									<h2>BUY TICKETS</h2>
 								</div>
-							</div>
-					</div> -->
+							</a>
 
+							<a href="http://whatthefestival.com/gallery">
+								<div id="two" class="fourcol clearfix">
+									<h2>MEDIA GALLERY</h2>
+								</div>
+							</a>
+
+							<a href="https://www.facebook.com/events/341321765968059/">
+								<div id="three" class="fourcol clearfix">
+									<h2>RSVP ON FACEBOOK</h2>
+								</div>
+							</a>
+
+						</div>
+						<div class="clearfix"></div>						
 			
 				    </div> <!-- end #main -->
 				    
